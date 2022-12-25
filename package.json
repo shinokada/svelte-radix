@@ -8,7 +8,7 @@
     "url": "https://blog.codewithshin.com"
   },
   "bugs": "https://github.com/shinokada/svelte-radix/issues",
-  "homepage": "https://shinokada.github.io/svelte-radix",
+  "homepage": "https://svelte-radix.codewithshin.com",
   "license": "MIT",
   "scripts": {
     "dev": "vite dev",

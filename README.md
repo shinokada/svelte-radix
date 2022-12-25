@@ -1,7 +1,7 @@
 <h1 align="center">Svelte-Radix</h1>
 
 <p align="center">
-<a href="https://shinokada.github.io/svelte-radix/">Svelte-Radix</a>
+<a href="https://svelte-radix.codewithshin.com/">Svelte-Radix</a>
 </p>
 
 <p align="center">
