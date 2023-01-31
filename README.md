@@ -15,7 +15,7 @@
 310+ SVG [Radix icons](https://github.com/radix-ui/icons) components for Svelte. Svelte-Radix support major CSS frameworks using the `class` props.
 
 <p align="center">
-<img src="/static/images/radix.png" width="650" />
+<img src="/static/images/radix-optimized.png" width="650" />
 </p>
 
 ## Installation
