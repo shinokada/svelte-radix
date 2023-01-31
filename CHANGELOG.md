@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.1.3](https://github.com/shinokada/svelte-radix/compare/v0.1.2...v0.1.3) (2023-01-31)
 
-
 ### Features
 
-* add pwa ([1b01a80](https://github.com/shinokada/svelte-radix/commit/1b01a809d9eff5fd41028a68795178e0fde718ba))
+- add pwa ([1b01a80](https://github.com/shinokada/svelte-radix/commit/1b01a809d9eff5fd41028a68795178e0fde718ba))
 
 ### [0.1.2](https://github.com/shinokada/svelte-radix/compare/v0.1.1...v0.1.2) (2022-12-25)
 
