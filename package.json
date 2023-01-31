@@ -1,6 +1,6 @@
 {
   "name": "svelte-radix",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Radix icon components for Svelte",
   "author": {
     "name": "Shinichi Okada",
