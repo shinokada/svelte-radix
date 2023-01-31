@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/shinokada/svelte-radix/compare/v0.1.3...v0.1.4) (2023-01-31)
+
+
+### Bug Fixes
+
+* image width ([acd2201](https://github.com/shinokada/svelte-radix/commit/acd220177b2bab14ddcb9a896462bfba548f79bd))
+* webmanifest ([1e9c99e](https://github.com/shinokada/svelte-radix/commit/1e9c99ee2537faffc729efdc2cf72a31ac82b08e))
+
 ### [0.1.3](https://github.com/shinokada/svelte-radix/compare/v0.1.2...v0.1.3) (2023-01-31)
 
 ### Features
