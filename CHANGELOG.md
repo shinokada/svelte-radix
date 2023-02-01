@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/shinokada/svelte-radix/compare/v0.1.6...v0.1.7) (2023-02-01)
+
+
+### Bug Fixes
+
+* add optimized image ([248c986](https://github.com/shinokada/svelte-radix/commit/248c9864d93921b59456ac1691b343403976ed84))
+* badges target, height, and add links to crossOriginLinks ([c6f86c8](https://github.com/shinokada/svelte-radix/commit/c6f86c819d6c34d09a3a07058e520208d5e38e5a))
+* favicon link ([f0c30f3](https://github.com/shinokada/svelte-radix/commit/f0c30f3243e9deffdb9d33e3b361691144b23764))
+
 ### [0.1.6](https://github.com/shinokada/svelte-radix/compare/v0.1.5...v0.1.6) (2023-01-31)
 
 ### Bug Fixes
