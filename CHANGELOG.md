@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/shinokada/svelte-radix/compare/v0.2.1...v0.3.1) (2023-03-07)
+
+
+### Features
+
+* add script add-exports ([5dc0b4d](https://github.com/shinokada/svelte-radix/commit/5dc0b4d37c5b82f3e841cd3581cb4e2e33553569))
+* add script add-exports and update README ([6d540a6](https://github.com/shinokada/svelte-radix/commit/6d540a68e85b7e1e333bcfef25a89d6efe0e5c5b))
+
 ### [0.2.1](https://github.com/shinokada/svelte-radix/compare/v0.1.8...v0.2.1) (2023-02-22)
 
 ### Features
