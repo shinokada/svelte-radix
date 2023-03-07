@@ -48,6 +48,38 @@ In a svelte file:
 <AlignBaseline />
 ```
 
+## Faster compiling
+
+For faster compilation, you can import the icon directly.
+
+```html
+<script>
+  import ActivityLog from 'svelte-radix/ActivityLog.svelte';
+</script>
+
+<ActivityLog />
+```
+
+If you are TypeScript user, **this require `"typescript": "^5.0.0"`.**
+
+As of March 2023, the `typescript@beta` version is now available:
+
+```sh
+pnpm i -D typescript@beta
+```
+
+To avoid any complaints from the editor, add `node16` or `nodenext` to `moduleResolution` in your tsconfig.json file.
+
+```json
+{
+  //...
+  "compilerOptions": {
+    // ...
+    "moduleResolution": "nodenext"
+  }
+}
+```
+
 ## Size
 
 Use the `size` prop to change the size of icons.
@@ -101,6 +133,14 @@ Use `ariaLabel` prop to modify the `aria-label` value.
 
 ```html
 <Accessibility ariaLabel="accessibility icon" />
+```
+
+## Unfocusable icon
+
+If you want to make an icon unfocusable, add `tabindex="-1"`.
+
+```html
+<Accessibility tabindex="-1" />
 ```
 
 ## Passing down other attributes

@@ -4,17 +4,15 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.2.1](https://github.com/shinokada/svelte-radix/compare/v0.1.8...v0.2.1) (2023-02-22)
 
-
 ### Features
 
-* add microsoft webmaster tools meta tag ([98499fd](https://github.com/shinokada/svelte-radix/commit/98499fd9630b780a8ff5ef1fe1f465dd87e3dde4))
-* new svelte packaging system ([d7ea18d](https://github.com/shinokada/svelte-radix/commit/d7ea18de027cf1d6e9c1bd6382807b9cc94bdf17))
-* new svelte packaging system 2 ([01a3646](https://github.com/shinokada/svelte-radix/commit/01a364659c0865d7b9aedae0dfd643257f9323fd))
-
+- add microsoft webmaster tools meta tag ([98499fd](https://github.com/shinokada/svelte-radix/commit/98499fd9630b780a8ff5ef1fe1f465dd87e3dde4))
+- new svelte packaging system ([d7ea18d](https://github.com/shinokada/svelte-radix/commit/d7ea18de027cf1d6e9c1bd6382807b9cc94bdf17))
+- new svelte packaging system 2 ([01a3646](https://github.com/shinokada/svelte-radix/commit/01a364659c0865d7b9aedae0dfd643257f9323fd))
 
 ### Bug Fixes
 
-* update index.html ([5ac7726](https://github.com/shinokada/svelte-radix/commit/5ac77260ada706af3db50723e46589099d326fdb))
+- update index.html ([5ac7726](https://github.com/shinokada/svelte-radix/commit/5ac77260ada706af3db50723e46589099d326fdb))
 
 ### [0.1.8](https://github.com/shinokada/svelte-radix/compare/v0.1.7...v0.1.8) (2023-02-03)
 
