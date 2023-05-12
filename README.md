@@ -203,6 +203,20 @@ Use `import * as Icon from 'svelte-radix`.
 <Icon.ActivityLog class="text-pink-700" />
 ```
 
+## Events
+
+All icons have the following events:
+
+```
+on:click
+on:mouseenter
+on:mouseleave
+on:mouseover
+on:mouseout
+on:blur
+on:focus
+```
+
 ## Other icons
 
 - [Svelte-Icon-Sets](https://svelte-svg-icons.vercel.app/)
