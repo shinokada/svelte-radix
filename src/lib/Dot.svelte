@@ -1,22 +1,8 @@
-<script lang="ts">
-  export let size = '15';
-  export let color = 'currentColor';
-  export let ariaLabel = 'dot';
-</script>
-
-<svg
-  width={size}
-  height={size}
-  class={$$props.class}
-  {...$$restProps}
-  aria-label={ariaLabel}
-  viewBox="0 0 15 15"
-  fill={color}
-  xmlns="http://www.w3.org/2000/svg"
->
+<script lang="ts">export let size="15"; export let color="currentColor";export let ariaLabel="dot" </script><svg width="{size}" height="{size}"  class={$$props.class} {...$$restProps} aria-label={ariaLabel}  on:click on:mouseenter on:mouseleave on:mouseover on:mouseout on:blur on:focus viewBox="0 0 15 15" fill={color} xmlns="http://www.w3.org/2000/svg">
   <path
     fill-rule="evenodd"
     clip-rule="evenodd"
     d="M7.5 9.125C8.39746 9.125 9.125 8.39746 9.125 7.5C9.125 6.60254 8.39746 5.875 7.5 5.875C6.60254 5.875 5.875 6.60254 5.875 7.5C5.875 8.39746 6.60254 9.125 7.5 9.125ZM7.5 10.125C8.94975 10.125 10.125 8.94975 10.125 7.5C10.125 6.05025 8.94975 4.875 7.5 4.875C6.05025 4.875 4.875 6.05025 4.875 7.5C4.875 8.94975 6.05025 10.125 7.5 10.125Z"
+    
   />
 </svg>
