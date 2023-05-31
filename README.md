@@ -82,6 +82,17 @@ To avoid any complaints from the editor, add `node16` or `nodenext` to `moduleRe
 }
 ```
 
+
+## Props
+
+- size = '16';
+- color = 'currentColor';
+- ariaLabel = 'accessibility 16';
+
+## IDE support
+
+If you are using an LSP-compatible editor, such as VSCode, Atom, Sublime Text, or Neovim, hovering over a component name will display a documentation link, features, props, events, and an example.
+
 ## Size
 
 Use the `size` prop to change the size of icons.
@@ -207,15 +218,17 @@ Use `import * as Icon from 'svelte-radix`.
 
 All icons have the following events:
 
-```
-on:click
-on:mouseenter
-on:mouseleave
-on:mouseover
-on:mouseout
-on:blur
-on:focus
-```
+
+- on:click
+- on:keydown
+- on:keyup
+- on:focus
+- on:blur
+- on:mouseenter
+- on:mouseleave
+- on:mouseover
+- on:mouseout
+
 
 ## Other icons
 

@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.4.1](https://github.com/shinokada/svelte-radix/compare/v0.3.1...v0.4.1) (2023-05-12)
 
-
 ### Features
 
-* add events ([034e8fc](https://github.com/shinokada/svelte-radix/commit/034e8fcf60aa814e9e963ab9b74866c3d75ed048))
+- add events ([034e8fc](https://github.com/shinokada/svelte-radix/commit/034e8fcf60aa814e9e963ab9b74866c3d75ed048))
 
 ### [0.3.1](https://github.com/shinokada/svelte-radix/compare/v0.2.1...v0.3.1) (2023-03-07)
 
