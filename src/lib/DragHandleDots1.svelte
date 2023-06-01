@@ -1,5 +1,6 @@
 <script lang="ts">
   export let size = '15';
+  export let role = 'img';
   export let color = 'currentColor';
   export let ariaLabel = 'drag handle dots 1';
 </script>
@@ -7,8 +8,8 @@
 <svg
   width={size}
   height={size}
-  class={$$props.class}
   {...$$restProps}
+  {role}
   aria-label={ariaLabel}
   on:click
   on:keydown
@@ -54,6 +55,7 @@
 [Go to Document](https://svelte-radix.codewithshin.com/)
 ## Props
 @prop size = '24';
+@prop role = 'img';
 @prop color = 'currentColor';
 @prop ariaLabel = 'icon file name';
 ## Event

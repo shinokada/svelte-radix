@@ -82,10 +82,10 @@ To avoid any complaints from the editor, add `node16` or `nodenext` to `moduleRe
 }
 ```
 
-
 ## Props
 
 - size = '16';
+- role = 'img';
 - color = 'currentColor';
 - ariaLabel = 'accessibility 16';
 
