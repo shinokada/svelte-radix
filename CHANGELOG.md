@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.4](https://github.com/shinokada/svelte-radix/compare/v0.4.3...v0.4.4) (2023-06-01)
+
+
+### Features
+
+* add prop role="img" ([f727404](https://github.com/shinokada/svelte-radix/commit/f72740406b39d464390d0314e2969f688f43fc5b))
+
 ### [0.4.3](https://github.com/shinokada/svelte-radix/compare/v0.4.2...v0.4.3) (2023-06-01)
 
 ### Features
