@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.3](https://github.com/shinokada/svelte-radix/compare/v0.4.2...v0.4.3) (2023-06-01)
+
+
+### Features
+
+* add || ^4.0.0 to peerDependencies ([c5ec8f1](https://github.com/shinokada/svelte-radix/commit/c5ec8f14d8e9dc3526eb6b655cec4f7fda6d6f18))
+
 ### [0.4.2](https://github.com/shinokada/svelte-radix/compare/v0.4.1...v0.4.2) (2023-05-31)
 
 
