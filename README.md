@@ -218,7 +218,6 @@ Use `import * as Icon from 'svelte-radix`.
 
 All icons have the following events:
 
-
 - on:click
 - on:keydown
 - on:keyup
@@ -228,7 +227,6 @@ All icons have the following events:
 - on:mouseleave
 - on:mouseover
 - on:mouseout
-
 
 ## Other icons
 
