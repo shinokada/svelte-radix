@@ -157,7 +157,6 @@ If you want to make an icon unfocusable, add `tabindex="-1"`.
 <Accessibility tabindex="-1" />
 ```
 
-
 ## Events
 
 All icons have the following events:
