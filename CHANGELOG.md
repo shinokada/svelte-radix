@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.6](https://github.com/shinokada/svelte-radix/compare/v0.4.5...v0.4.6) (2023-07-20)
+
+
+### Features
+
+* layout update ([a52eea9](https://github.com/shinokada/svelte-radix/commit/a52eea9369a83879670fa71c238d075a7f28ce7b))
+
+
+### Bug Fixes
+
+* homepage update ([596b874](https://github.com/shinokada/svelte-radix/commit/596b8742b1747d09b32f7b7742e0a57e880ebea9))
+* image sizes ([36912fb](https://github.com/shinokada/svelte-radix/commit/36912fb901e532fc5167219c8434703b9fa4890b))
+* update flowbite-svelte v0.40.1, add @floating-ui/dom remove flowbite and popper, add tests ([eece69a](https://github.com/shinokada/svelte-radix/commit/eece69a89597bc7393ea53fe5c37f5f4aa418f81))
+* update layout ([ef15c0f](https://github.com/shinokada/svelte-radix/commit/ef15c0f84ce6af19e741047a239cb3ea1dc4ad1f))
+
 ### [0.4.5](https://github.com/shinokada/svelte-radix/compare/v0.4.4...v0.4.5) (2023-06-15)
 
 ### [0.4.4](https://github.com/shinokada/svelte-radix/compare/v0.4.3...v0.4.4) (2023-06-01)
