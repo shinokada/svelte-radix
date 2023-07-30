@@ -39,50 +39,20 @@ In a svelte file:
 
 ```html
 <script>
-  import { Accessibility, ActivityLog, AlignBaseline } from 'svelte-radix';
+  import { Icon } from 'svelte-radix';
 </script>
 
-<Accessibility />
-<ActivityLog />
-<AlignBaseline />
-```
-
-## Faster compiling
-
-If you need only a few icons from this library in your Svelte app, import them directly. This can optimize compilation speed and improve performance by reducing the amount of code processed during compilation.
-
-```html
-<script>
-  import ActivityLog from 'svelte-radix/ActivityLog.svelte';
-</script>
-
-<ActivityLog />
-```
-
-If you are a TypeScript user, install **typescript version 5.0.0 or above**.
-
-```sh
-pnpm i -D typescript@beta
-```
-
-To avoid any complaints from the editor, add `node16` or `nodenext` to `moduleResolution` in your tsconfig.json file.
-
-```json
-{
-  //...
-  "compilerOptions": {
-    // ...
-    "moduleResolution": "nodenext"
-  }
-}
+<Icon name="accessibility" />
 ```
 
 ## Props
 
-- size = '16';
-- role = 'img';
-- color = 'currentColor';
-- ariaLabel = 'accessibility 16';
+- @prop name;
+- @prop width = "15";
+- @prop height = "15";
+- @prop role = 'img';
+- @prop color = 'currentColor'
+- @prop ariaLabel='icon name'
 
 ## IDE support
 
@@ -90,18 +60,16 @@ If you are using an LSP-compatible editor, such as VSCode, Atom, Sublime Text, o
 
 ## Size
 
-Use the `size` prop to change the size of icons.
+Use the `width` and `height` props to change the size of icons.
 
 ```html
-<Accessibility size="40" />
-<ActivityLog size="50" />
-<AlignBaseline size="60" />
+<Icon name="accessibility" width="100" height="100" />
 ```
 
-If you are using Tailwind CSS, you can add a custom size using Tailwind CSS by including the desired classes in the `class` prop. For example:
+If you are using Tailwind CSS, you can add a custom size using Tailwind CSS by including the desired classes in the class prop. For example:
 
 ```html
-<ActivityLog class="shrink-0 h-20 w-20" />
+<Icon name="accessibility" class="shrink-0 h-20 w-20" />
 ```
 
 ## CSS HEX Colors
@@ -109,25 +77,23 @@ If you are using Tailwind CSS, you can add a custom size using Tailwind CSS by i
 Use the `color` prop to change colors with HEX color code.
 
 ```html
-<Accessibility color="#c61515" />
-<ActivityLog color="#3759e5" />
-<AlignBaseline color="#3fe537" />
+<Icon name="accessibility" color="#c61515" />
 ```
 
-## CSS framworks suport
+## CSS frameworks suport
 
 You can apply CSS framework color and other attributes directly to the icon component or its parent tag using the `class` prop.
 
 Tailwind CSS example:
 
 ```html
-<Accessibility class="h-24 w-24 text-blue-700 mr-4" />
+<Icon name="accessibility" class="text-red-700 inline m-1" />
 ```
 
 Bootstrap examples:
 
 ```html
-<Accessibility class="position-absolute top-0 px-1" />
+<Icon name="accessibility" class="position-absolute top-0 px-1" />
 ```
 
 ## Dark mode
@@ -137,16 +103,16 @@ If you are using the dark mode on your website with Tailwind CSS, add your dark 
 Let's use `dark` for the dark mode class as an example.
 
 ```html
-<Accessibility class="text-blue-700 dark:text-red-500" />
+<Icon name="accessibility"  class="text-blue-700 dark:text-red-500" />
 ```
 
 ## aria-label
 
-All icons have aria-label. For example `Accessibility` has `aria-label="accessibility"`.
+All icons have aria-label. For example `accessibility` has `aria-label="accessibility"`.
 Use `ariaLabel` prop to modify the `aria-label` value.
 
 ```html
-<Accessibility ariaLabel="accessibility icon" />
+<Icon name="accessibility" ariaLabel="red accessibility" color="#c61515"/>
 ```
 
 ## Unfocusable icon
@@ -154,7 +120,7 @@ Use `ariaLabel` prop to modify the `aria-label` value.
 If you want to make an icon unfocusable, add `tabindex="-1"`.
 
 ```html
-<Accessibility tabindex="-1" />
+<Icon name="accessibility"  tabindex="-1" />
 ```
 
 ## Events
@@ -176,59 +142,49 @@ All icons have the following events:
 You can pass other attibutes as well.
 
 ```html
-<Accessibility tabindex="0" />
+<Icon name="accessibility"  tabindex="0" />
 ```
 
 ## Using svelte:component
 
 ```html
-<script>
-  import { Accessibility } from 'svelte-radix';
-</script>
-
-<svelte:component this="{Accessibility}" />
+<svelte:component this="{Icon}" name="accessibility" />
 ```
 
 ## Using onMount
 
 ```html
 <script>
-  import { Accessibility } from 'svelte-radix';
+  import {Icon} from 'svelte-radix';
   import { onMount } from 'svelte';
   const props = {
+    name: 'accessibility',
     size: '50',
     color: '#ff0000'
   };
   onMount(() => {
-    const icon = new Accessibility({ target: document.body, props });
+    const icon = new Icon({ target: document.body, props });
   });
 </script>
 ```
 
+
 ## Import all
 
-Use `import * as Icon from 'svelte-radix`.
+Use `import {Icon, icons} from 'svelte-radix';`.
 
 ```html
 <script>
-  import * as Icon from 'svelte-radix';
+  import {Icon, icons} from 'svelte-radix';
 </script>
 
-<Icon.Accessibility />
-<Icon.ActivityLog />
-
-<h1>Size</h1>
-<Icon.Accessibility size="30" />
-<Icon.ActivityLog size="40" />
-
-<h1>CSS HEX color</h1>
-<Icon.Accessibility color="#c61515" size="40" />
-
-<h1>Tailwind CSS</h1>
-<Icon.Accessibility class="text-blue-500" />
-<Icon.ActivityLog class="text-pink-700" />
+{#each Object.keys(icons) as name}
+<div class="flex gap-4 items-center text-lg">
+  <Icon name={name} bind:width={size} bind:height={size} class="shrink-0"/>
+  {name}
+</div>
+{/each}
 ```
-
 
 ## Other icons
 
