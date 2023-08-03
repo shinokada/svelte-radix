@@ -1,6 +1,6 @@
 {
   "name": "svelte-radix",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "main": "dist/index.js",
   "description": "Radix icon components for Svelte",
   "author": {
