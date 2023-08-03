@@ -180,7 +180,7 @@ Use `import {Icon, icons} from 'svelte-radix';`.
 
 {#each Object.keys(icons) as name}
 <div class="flex gap-4 items-center text-lg">
-  <Icon name={name} bind:width={size} bind:height={size} class="shrink-0"/>
+  <Icon name={name} class="shrink-0"/>
   {name}
 </div>
 {/each}
