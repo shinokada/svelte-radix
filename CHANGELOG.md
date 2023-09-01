@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.1](https://github.com/shinokada/svelte-radix/compare/v0.5.3...v0.6.1) (2023-09-01)
+
+
+### Features
+
+* smaller compiled size and Icon component ([86af388](https://github.com/shinokada/svelte-radix/commit/86af38806f9300475498098fae3570ab3a384edd))
+
 ### [0.5.3](https://github.com/shinokada/svelte-radix/compare/v0.5.2...v0.5.3) (2023-08-03)
 
 ### [0.5.2](https://github.com/shinokada/svelte-radix/compare/v0.5.1...v0.5.2) (2023-07-31)
