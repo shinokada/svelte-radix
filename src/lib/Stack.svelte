@@ -1,7 +1,9 @@
-<script lang="ts">
-  export let size = '15';
-  export let role = 'img';
-  export let color = 'currentColor';
+<script>
+  import { getContext } from 'svelte';
+  const ctx = getContext('iconCtx') ?? {};
+  export let size = ctx.size || '24';
+  export let role = ctx.role || 'img';
+  export let color = ctx.color || 'currentColor';
   export let ariaLabel = 'stack';
 </script>
 
@@ -35,8 +37,8 @@
 @component
 [Go to docs](https://svelte-radix.vercel.app/)
 ## Props
-@prop export let size = '15';
-@prop export let role = 'img';
-@prop export let color = 'currentColor';
+@prop export let size = ctx.size || '24';
+@prop export let role = ctx.role || 'img';
+@prop export let color = ctx.color || 'currentColor';
 @prop export let ariaLabel = 'stack';
 -->

@@ -1,6 +1,6 @@
 <script>
   import { setContext } from 'svelte';
-  import { EiUser, EiScTwitter } from '$lib';
+  import { ViewGrid, ZoomOut } from '$lib';
   const iconCtx = {
     size: '100', // Icon size in pixels
     color: '#00ff00', // Icon color in hexadecimal or CSS color name
@@ -9,5 +9,5 @@
   setContext('iconCtx', iconCtx);
 </script>
 
-<EiUser />
-<EiScTwitter />
+<ViewGrid />
+<ZoomOut />
