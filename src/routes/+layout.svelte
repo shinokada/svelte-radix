@@ -1,6 +1,7 @@
 <script>
   import '../app.postcss';
   import { page } from '$app/stores';
+  import { afterNavigate } from '$app/navigation';
   import DarkMode from 'flowbite-svelte/DarkMode.svelte';
   import Navbar from 'flowbite-svelte/Navbar.svelte';
   import NavBrand from 'flowbite-svelte/NavBrand.svelte';
@@ -16,8 +17,11 @@
   $: activeUrl = $page.url.pathname;
   const title = 'Svelte Radix';
   let divClass = 'w-full ml-auto lg:block lg:w-auto order-1 lg:order-none';
-  let ulClass =
-    'flex flex-col py-3 my-4 lg:flex-row lg:my-0 text-sm font-medium gap-4 dark:lg:bg-transparent lg:bg-white lg:border-0';
+  let ulClass = 'flex flex-col py-3 my-4 lg:flex-row lg:my-0 text-sm font-medium gap-4 dark:lg:bg-transparent lg:bg-white lg:border-0';
+
+  afterNavigate(() => {
+    document.getElementById('svelte')?.scrollTo({ top: 0 });
+  });
 </script>
 
 <MetaTags
@@ -36,7 +40,7 @@
         alt: 'Svelte Radix'
       }
     ],
-    site_name: 'Svelte Radix'
+    siteName: 'Svelte Radix'
   }}
   twitter={{
     handle: '@shinokada',
@@ -48,7 +52,10 @@
   }}
 />
 
-<header class="flex-none w-full mx-auto bg-white dark:bg-slate-950">
+<div class="max-h-screen overflow-auto relative w-full" id="svelte">
+  <header
+    class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-slate-950"
+  >
   <Navbar color="default" fluid let:hidden let:toggle class="dark:bg-slate-950 ">
     <NavBrand href="/">
       <span
@@ -99,3 +106,4 @@
     </FooterLinkGroup>
   </div>
 </Footer>
+</div>
