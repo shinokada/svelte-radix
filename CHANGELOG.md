@@ -4,11 +4,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.6.2](https://github.com/shinokada/svelte-radix/compare/v0.6.1...v0.6.2) (2023-09-21)
 
-
 ### Features
 
-* add context ([7d19586](https://github.com/shinokada/svelte-radix/commit/7d19586f4ee7d968cc0268fd3901cf3ad73352aa))
-* add sidebar menu ([87f8cc2](https://github.com/shinokada/svelte-radix/commit/87f8cc2795c5c5747cb70b09a64436a665b0362f))
+- add context ([7d19586](https://github.com/shinokada/svelte-radix/commit/7d19586f4ee7d968cc0268fd3901cf3ad73352aa))
+- add sidebar menu ([87f8cc2](https://github.com/shinokada/svelte-radix/commit/87f8cc2795c5c5747cb70b09a64436a665b0362f))
 
 ### [0.6.1](https://github.com/shinokada/svelte-radix/compare/v0.5.3...v0.6.1) (2023-09-01)
 
