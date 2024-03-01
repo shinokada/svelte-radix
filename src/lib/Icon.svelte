@@ -19,7 +19,7 @@
 
 <!--
 @component
-[Go to docs](https://svelte-radix.vercel.app/)
+[Go to docs](https://svelte-radix.codewithshin.com/)
 ## Props
 @prop export let icon: ComponentType;
 @prop export let size: number = 15;

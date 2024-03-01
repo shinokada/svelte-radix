@@ -1363,6 +1363,7 @@
     "./ZoomOut.svelte": {
       "types": "./dist/ZoomOut.svelte.d.ts",
       "svelte": "./dist/ZoomOut.svelte"
-    }
+    },
+    "./package.json": "./package.json"
   }
 }
