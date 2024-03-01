@@ -20,16 +20,6 @@ Thank you for considering my open-source package. If you use it in a commercial 
 
 [GitHub Repo](https://github.com/shinokada/svelte-radix)
 
-## Original source
-
-[radix-ui/icons](https://github.com/radix-ui/icons)
-
-## License
-
-[svelte-radix License](https://github.com/shinokada/svelte-radix/blob/main/LICENSE)
-
-[radix-ui/icons LICENSE](https://github.com/radix-ui/icons/blob/master/LICENSE)
-
 ## Installation
 
 ```sh
@@ -347,6 +337,16 @@ Use `import * as Icon from 'svelte-radix`.
 <Icon.ActivityLog class="text-pink-700" />
 ```
 
+## Original source
+
+[radix-ui/icons](https://github.com/radix-ui/icons)
+
+## License
+
+[svelte-radix License](https://github.com/shinokada/svelte-radix/blob/main/LICENSE)
+
+[radix-ui/icons LICENSE](https://github.com/radix-ui/icons/blob/master/LICENSE)
+
 ## Other icons
 
-[Svelte-Icon-Sets](https://svelte-svg-icons.vercel.app/)
+[Svelte-Icon-Sets](https://svelte-svg-icons.codewithshin.com/)
