@@ -4,18 +4,16 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.0.3](https://github.com/shinokada/svelte-radix/compare/v1.0.2...v1.0.3) (2024-03-01)
 
-
 ### Bug Fixes
 
-* @typescript-eslint/eslint-plugin update ([d23c382](https://github.com/shinokada/svelte-radix/commit/d23c382770327fda1ea643cabf02073bea1f1084))
+- @typescript-eslint/eslint-plugin update ([d23c382](https://github.com/shinokada/svelte-radix/commit/d23c382770327fda1ea643cabf02073bea1f1084))
 
 ### [1.0.2](https://github.com/shinokada/svelte-radix/compare/v1.0.1...v1.0.2) (2024-03-01)
 
-
 ### Bug Fixes
 
-* layout update add class to NavHamburger ([a4f9600](https://github.com/shinokada/svelte-radix/commit/a4f9600f71edd478e46f87416a24a9ca2b941cd4))
-* remove active from NavLi and add activeUrl to NavUl ([be4ed5b](https://github.com/shinokada/svelte-radix/commit/be4ed5b899665e5276bbfaf9d604512d9930f82c))
+- layout update add class to NavHamburger ([a4f9600](https://github.com/shinokada/svelte-radix/commit/a4f9600f71edd478e46f87416a24a9ca2b941cd4))
+- remove active from NavLi and add activeUrl to NavUl ([be4ed5b](https://github.com/shinokada/svelte-radix/commit/be4ed5b899665e5276bbfaf9d604512d9930f82c))
 
 ### [1.0.1](https://github.com/shinokada/svelte-radix/compare/v0.6.2...v1.0.1) (2024-01-27)
 

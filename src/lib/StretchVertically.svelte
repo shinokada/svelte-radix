@@ -4,34 +4,56 @@
   export let size = ctx.size || '24';
   export let role = ctx.role || 'img';
   export let color = ctx.color || 'currentColor';
-  export let ariaLabel = 'stretch vertically';
+  export let ariaLabel = 'stretch vertically,';
+  export let withEvents = false;
 </script>
 
-<svg
-  width={size}
-  height={size}
-  {...$$restProps}
-  {role}
-  aria-label={ariaLabel}
-  on:click
-  on:keydown
-  on:keyup
-  on:focus
-  on:blur
-  on:mouseenter
-  on:mouseleave
-  on:mouseover
-  on:mouseout
-  viewBox="0 0 15 15"
-  fill={color}
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    fill-rule="evenodd"
-    clip-rule="evenodd"
-    d="M0.999878 0.5C0.999878 0.223858 1.22374 0 1.49988 0H13.4999C13.776 0 13.9999 0.223858 13.9999 0.5C13.9999 0.776142 13.776 1 13.4999 1H6H1.49988C1.22374 1 0.999878 0.776142 0.999878 0.5ZM9 14V1L6 1V14H1.49988C1.22374 14 0.999878 14.2239 0.999878 14.5C0.999878 14.7761 1.22374 15 1.49988 15H13.4999C13.776 15 13.9999 14.7761 13.9999 14.5C13.9999 14.2239 13.776 14 13.4999 14H9Z"
-  />
-</svg>
+{#if withEvents}
+  <svg
+    width={size}
+    height={size}
+    {...$$restProps}
+    {role}
+    aria-label={ariaLabel}
+    on:click
+    on:keydown
+    on:keyup
+    on:focus
+    on:blur
+    on:mouseenter
+    on:mouseleave
+    on:mouseover
+    on:mouseout
+    viewBox="0 0 15 15"
+    fill={color}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M0.999878 0.5C0.999878 0.223858 1.22374 0 1.49988 0H13.4999C13.776 0 13.9999 0.223858 13.9999 0.5C13.9999 0.776142 13.776 1 13.4999 1H6H1.49988C1.22374 1 0.999878 0.776142 0.999878 0.5ZM9 14V1L6 1V14H1.49988C1.22374 14 0.999878 14.2239 0.999878 14.5C0.999878 14.7761 1.22374 15 1.49988 15H13.4999C13.776 15 13.9999 14.7761 13.9999 14.5C13.9999 14.2239 13.776 14 13.4999 14H9Z"
+      fill="currentColor"
+    />
+  </svg>
+{:else}
+  <svg
+    width={size}
+    height={size}
+    {...$$restProps}
+    {role}
+    aria-label={ariaLabel}
+    viewBox="0 0 15 15"
+    fill={color}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M0.999878 0.5C0.999878 0.223858 1.22374 0 1.49988 0H13.4999C13.776 0 13.9999 0.223858 13.9999 0.5C13.9999 0.776142 13.776 1 13.4999 1H6H1.49988C1.22374 1 0.999878 0.776142 0.999878 0.5ZM9 14V1L6 1V14H1.49988C1.22374 14 0.999878 14.2239 0.999878 14.5C0.999878 14.7761 1.22374 15 1.49988 15H13.4999C13.776 15 13.9999 14.7761 13.9999 14.5C13.9999 14.2239 13.776 14 13.4999 14H9Z"
+      fill="currentColor"
+    />
+  </svg>
+{/if}
 
 <!--
 @component
@@ -40,5 +62,6 @@
 @prop export let size = ctx.size || '24';
 @prop export let role = ctx.role || 'img';
 @prop export let color = ctx.color || 'currentColor';
-@prop export let ariaLabel = 'stretch vertically';
+@prop export let ariaLabel = 'stretch vertically,';
+@prop export let withEvents = false;
 -->
