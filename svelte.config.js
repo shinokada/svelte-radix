@@ -3,7 +3,7 @@ import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-auto';
 import mdsvexConfig from './mdsvex.config.js';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import delegateEvents from "svelte-preprocess-delegate-events/preprocess";
+import delegateEvents from 'svelte-preprocess-delegate-events/preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
