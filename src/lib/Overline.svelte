@@ -13,15 +13,7 @@
   {...$$restProps}
   {role}
   aria-label={ariaLabel}
-  on:click
-  on:keydown
-  on:keyup
-  on:focus
-  on:blur
-  on:mouseenter
-  on:mouseleave
-  on:mouseover
-  on:mouseout
+  on:*
   viewBox="0 0 15 15"
   fill={color}
   xmlns="http://www.w3.org/2000/svg"
