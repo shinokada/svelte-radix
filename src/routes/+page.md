@@ -2,6 +2,17 @@
 layout: mainLayout
 ---
 
+<script>
+  import { Banner, Button } from 'flowbite-svelte';
+</script>
+
+<Banner id="default-banner" dismissable={false} >
+  <p class="flex items-center gap-4 text-sm font-normal text-gray-500 dark:text-gray-400">
+      Hello! Do you like the library? Do you want to support the project? <a href='https://ko-fi.com/Z8Z2CHALG' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+  </p>
+</Banner>
+
+
 # Svelte Radix
 
 <div class="flex gap-2 my-8">
@@ -13,8 +24,6 @@ layout: mainLayout
 </div>
 
 310+ SVG [Radix icons](https://github.com/radix-ui/icons) components for Svelte.
-
-Thank you for considering my open-source package. If you use it in a commercial project, please support me by sponsoring me on GitHub: https://github.com/sponsors/shinokada. Your support helps me maintain and improve this package for the benefit of the community.
 
 ## Repo
 
@@ -58,6 +67,7 @@ If you need only a few icons from this library in your Svelte app, import them d
 - role = ctx.role || 'img';
 - color = ctx.color || 'currentColor';
 - ariaLabel = 'file name';
+- withEvents = false
 
 ## IDE support
 
@@ -267,7 +277,7 @@ If you want to make an icon unfocusable, add `tabindex="-1"`.
 
 ## Events
 
-All icons have the following events:
+Add the `withEvents` props if you want the following events forwarding:
 
 - on:click
 - on:keydown
