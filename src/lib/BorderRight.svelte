@@ -1,107 +1,146 @@
-<script>
+<script lang="ts">
   import { getContext } from 'svelte';
-  const ctx = getContext('iconCtx') ?? {};
-  export let size = ctx.size || '24';
-  export let role = ctx.role || 'img';
-  export let color = ctx.color || 'currentColor';
-  export let ariaLabel = 'border right,';
-  export let withEvents = false;
+  type TitleType = {
+    id?: string;
+    title?: string;
+  };
+  type DescType = {
+    id?: string;
+    desc?: string;
+  };
+  interface BaseProps {
+    size?: string;
+    role?: string;
+    color?: string;
+    withEvents?: boolean;
+    onclick?: (event: MouseEvent) => void;
+    onkeydown?: (event: KeyboardEvent) => void;
+    onkeyup?: (event: KeyboardEvent) => void;
+    class?: string;
+  }
+  interface CtxType extends BaseProps {}
+  const ctx: CtxType = getContext('iconCtx') ?? {};
+  interface Props extends BaseProps {
+    title?: TitleType;
+    desc?: DescType;
+    ariaLabel?: string;
+  }
+
+  let {
+    size = ctx.size || '24',
+    role = ctx.role || 'img',
+    color = ctx.color || 'currentColor',
+    withEvents = ctx.withEvents || false,
+    title,
+    desc,
+    class: classname,
+    ariaLabel = 'border right',
+    onclick,
+    onkeydown,
+    onkeyup,
+    ...restProps
+  }: Props = $props();
+
+  let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
+  const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
 {#if withEvents}
   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    {...restProps}
+    {role}
     width={size}
     height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    on:click
-    on:keydown
-    on:keyup
-    on:focus
-    on:blur
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    on:mouseout
-    viewBox="0 0 15 15"
+    class={classname}
     fill={color}
-    xmlns="http://www.w3.org/2000/svg"
+    aria-label={ariaLabel}
+    aria-describedby={hasDescription ? ariaDescribedby : undefined}
+    viewBox="0 0 15 15"
+    {onclick}
+    {onkeydown}
+    {onkeyup}
   >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M13.25 1L13.25 14L14.75 14L14.75 1L13.25 1Z"
-      fill="currentColor"
-    /> <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 5)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 5)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 3)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 3)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 9)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 9)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 11)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 11)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 1)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 1)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 1)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 1)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 1)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 1)" fill="currentColor" />
+    {#if title?.id && title.title}
+      <title id={title.id}>{title.title}</title>
+    {/if}
+    {#if desc?.id && desc.desc}
+      <desc id={desc.id}>{desc.desc}</desc>
+    {/if}
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.25 1L13.25 14L14.75 14L14.75 1L13.25 1Z" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 5)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 5)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 3)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 3)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 9)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 9)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 11)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 11)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 1)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 1)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 1)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 1)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 1)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 1)" />
   </svg>
 {:else}
   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    {...restProps}
+    {role}
     width={size}
     height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    viewBox="0 0 15 15"
+    class={classname}
     fill={color}
-    xmlns="http://www.w3.org/2000/svg"
+    aria-label={ariaLabel}
+    aria-describedby={hasDescription ? ariaDescribedby : undefined}
+    viewBox="0 0 15 15"
   >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M13.25 1L13.25 14L14.75 14L14.75 1L13.25 1Z"
-      fill="currentColor"
-    /> <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 5)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 5)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 3)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 3)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 9)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 9)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 11)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 11)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 7)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 13)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 1)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 1)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 1)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 1)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 1)" fill="currentColor" />
-    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 1)" fill="currentColor" />
+    {#if title?.id && title.title}
+      <title id={title.id}>{title.title}</title>
+    {/if}
+    {#if desc?.id && desc.desc}
+      <desc id={desc.id}>{desc.desc}</desc>
+    {/if}
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.25 1L13.25 14L14.75 14L14.75 1L13.25 1Z" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 5)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 5)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 3)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 3)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 9)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 9)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 11)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 11)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 7)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 13)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 5 1)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 3 1)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 7 1)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 1 1)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 1)" />
+    <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 1)" />
   </svg>
 {/if}
 
@@ -109,9 +148,5 @@
 @component
 [Go to docs](https://svelte-radix.codewithshin.com/)
 ## Props
-@prop export let size = ctx.size || '24';
-@prop export let role = ctx.role || 'img';
-@prop export let color = ctx.color || 'currentColor';
-@prop export let ariaLabel = 'border right,';
-@prop export let withEvents = false;
+@props: 
 -->

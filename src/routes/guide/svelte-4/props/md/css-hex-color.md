@@ -1,0 +1,1 @@
+<Accessibility color="#ff0000" size="30" />
