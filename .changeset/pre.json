@@ -4,5 +4,5 @@
   "initialVersions": {
     "svelte-radix": "2.0.0-next.0"
   },
-  "changesets": []
+  "changesets": ["sour-months-work"]
 }
