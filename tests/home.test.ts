@@ -46,6 +46,7 @@ test('index page has expected meta og', async ({ page }) => {
   );
 });
 
+
 test('index page has expected meta twitter', async ({ page }) => {
   const metaTwitterTitle = page.locator('meta[name="twitter:title"]');
   await expect(metaTwitterTitle).toHaveAttribute('content', 'Svelte Radix');
