@@ -17,7 +17,7 @@
     /></a
   >
   <a href="https://www.npmjs.com/package/svelte-radix" rel="nofollow" target="_blank"
-    ><img src="https://img.shields.io/npm/v/svelte-radix" alt="npm" /></a
+    ><img src="https://img.shields.io/npm/v/svelte-radix/next" alt="npm" /></a
   >
   <a href="https://opensource.org/licenses/MIT" rel="nofollow" target="_blank"
     ><img src="https://img.shields.io/github/license/shinokada/svelte-radix" alt="License" /></a

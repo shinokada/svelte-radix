@@ -5,7 +5,7 @@
 - title
 - desc
 - class: classname
-- ariaLabel =  "accessibility"
+- ariaLabel =  "<icon file name>"
 - onclick
 - onkeydown
 - onkeyup
