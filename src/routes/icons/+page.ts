@@ -2,15 +2,15 @@ import type { MetaProps } from 'runes-meta-tags';
 
 export const load = () => {
   const pageMetaTags = Object.freeze({
-    title: 'Three Tabs example - Runes Webkit',
-    description: 'Three Tabs example',
+    title: 'Icons - Svelte Radix',
+    description: 'Svelte Radix Icons and icon names',
     og: {
-      title: 'Three Tabs example - Runes Webkit',
-      description: 'Three Tabs example'
+      title: 'Icons - Svelte Radix',
+      description: 'Svelte Radix Icons and icon names'
     },
     twitter: {
-      title: 'Three Tabs example - Runes Webkit',
-      description: 'Three Tabs example'
+      title: 'Icons - Svelte Radix',
+      description: 'Svelte Radix Icons and icon names'
     }
   }) satisfies MetaProps;
   return { pageMetaTags };

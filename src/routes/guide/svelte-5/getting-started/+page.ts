@@ -2,15 +2,15 @@ import type { MetaProps } from 'runes-meta-tags';
 
 export const load = () => {
   const pageMetaTags = Object.freeze({
-    title: 'Svelte 5 Getting started example - Runes Webkit',
-    description: 'Svelte 5 Getting started example',
+    title: 'Getting Started: Svelte Radix v2 ',
+    description: 'Getting Started with Svelte Radix v2',
     og: {
-      title: 'Svelte 5 Getting started example - Runes Webkit',
-      description: 'Svelte 5 Getting started example'
+      title: 'Getting Started: Svelte Radix v2',
+      description: 'Getting Started with Svelte Radix v2'
     },
     twitter: {
-      title: 'Svelte 5 Getting started example - Runes Webkit',
-      description: 'Svelte 5 Getting started example'
+      title: 'Getting Started: Svelte Radix v2',
+      description: 'Getting Started with Svelte Radix v2'
     }
   }) satisfies MetaProps;
   return { pageMetaTags };
