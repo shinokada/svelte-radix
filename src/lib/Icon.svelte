@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { ComponentType } from 'svelte';
+  import type { Component } from 'svelte';
   interface Props {
-    icon: ComponentType;
+    icon: Component;
     size?: string;
     role?: string;
     ariaLabel?: string;
@@ -30,7 +30,7 @@
 @component
 [Go to docs](https://svelte-radix.codewithshin.com/)
 ## Props
-@props: icon: ComponentType;
+@props: icon: Component;
 @props:size?:  string; = '24';
 @props:role?:  string; = 'img';
 @props:ariaLabel?:  string; = 'Icon';

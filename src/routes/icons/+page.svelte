@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ComponentType } from 'svelte';
+  import type { Component } from 'svelte';
   import { IconPage, filterStringKeys } from 'runes-webkit';
   import * as icons from '$lib';
   const keyIcons = filterStringKeys(icons);
@@ -8,4 +8,4 @@
   );
 </script>
 
-<IconPage icons={filteredIcons as ComponentType} title="Three Tabs" />
+<IconPage icons={filteredIcons as Component} title="Icons - Svelte Radix" />

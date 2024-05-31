@@ -7,7 +7,7 @@
   });
 </script>
 
-<h1>Svelte Radix: v2</h1>
+<h1>Getting Started - Svelte Radix v2</h1>
 
 <div class="my-8 flex gap-2">
   <a href="https://github.com/sponsors/shinokada" target="_blank"

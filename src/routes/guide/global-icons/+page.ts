@@ -1,16 +1,21 @@
 import type { MetaProps } from 'runes-meta-tags';
 
+const title = 'Setting Global Icon - Svelte Radix'
+const description = 'How to create a global icon using setContext with Svelte Radix'
+const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-radix'
 export const load = () => {
   const pageMetaTags = Object.freeze({
-    title: 'Setting Global Icon - Svelte Radix',
-    description: 'Setting Global Icon using setContext with Svelte Radix',
+    title,
+    description,
     og: {
-      title: 'Setting Global Icon - Svelte Radix',
-      description: 'Setting Global Icon using setContext with Svelte Radix'
+      title,
+      description,
+      image: imgUrl
     },
     twitter: {
-      title: 'Setting Global Icon - Svelte Radix',
-      description: 'Setting Global Icon using setContext with Svelte Radix'
+      title,
+      description,
+      image: imgUrl
     }
   }) satisfies MetaProps;
   return { pageMetaTags };

@@ -2,12 +2,12 @@
   const extra: ListType[] = [
     {
       name: 'Icons',
-      icon: ExpandOutline as ComponentType,
+      icon: ExpandOutline as Component,
       href: '/icons'
     },
     {
       name: 'Icon Sets',
-      icon: CogOutline as ComponentType,
+      icon: CogOutline as Component,
       href: 'https://svelte-svg-icons.codewithshin.com/'
     }
   ];
@@ -17,7 +17,7 @@
 <script lang="ts">
   import '../app.pcss';
   import { page } from '$app/stores';
-  import type { ComponentType } from 'svelte';
+  import type { Component } from 'svelte';
   import type { ListType } from 'runes-webkit';
   import {
     Footer,

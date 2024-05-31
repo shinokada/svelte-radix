@@ -1,16 +1,22 @@
 import type { MetaProps } from 'runes-meta-tags';
 
-export const load = () => {
+const title = 'Getting Started - Svelte Radix v2'
+const description = 'How to get started with Svelte Radix v2'
+const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-radix'
+
+export const load = ({ url }) => {
   const pageMetaTags = Object.freeze({
-    title: 'Getting Started: Svelte Radix v2 ',
-    description: 'Getting Started with Svelte Radix v2',
+    title,
+    description,
     og: {
-      title: 'Getting Started: Svelte Radix v2',
-      description: 'Getting Started with Svelte Radix v2'
+      title,
+      description,
+      image: imgUrl
     },
     twitter: {
-      title: 'Getting Started: Svelte Radix v2',
-      description: 'Getting Started with Svelte Radix v2'
+      title,
+      description,
+      image: imgUrl
     }
   }) satisfies MetaProps;
   return { pageMetaTags };
