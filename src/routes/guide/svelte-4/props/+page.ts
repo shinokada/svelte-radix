@@ -5,7 +5,7 @@ const description = 'How to use Svelte Radix v1 props'
 const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-radix'
 
 export const load = () => {
-  const pageMetaTags = Object.freeze({
+  const pageMetaTags: MetaProps = {
     title,
     description,
     og: {
@@ -18,6 +18,6 @@ export const load = () => {
       description,
       image: imgUrl
     }
-  }) satisfies MetaProps;
+  };
   return { pageMetaTags };
 };

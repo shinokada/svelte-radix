@@ -4,7 +4,7 @@ const title = 'Custom icons - Svelte Radix'
 const description = 'How to create a custom icons with Svelte Radix'
 const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-radix'
 export const load = () => {
-  const pageMetaTags = Object.freeze({
+  const pageMetaTags: MetaProps = {
     title,
     description,
     og: {
@@ -17,6 +17,6 @@ export const load = () => {
       description,
       image: imgUrl
     }
-  }) satisfies MetaProps;
+  };
   return { pageMetaTags };
 };
