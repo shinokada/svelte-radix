@@ -21,13 +21,14 @@ test('Icons page has expected meta description', async ({ page }) => {
   await expect(metaDescription).toHaveAttribute('content', description);
 });
 
-test('Icons page has expected meta og', async ({ page }) => {
+test('Icons page has expected meta og', async ({ page, baseURL }) => {
   const metaOgTitle = page.locator('meta[property="og:title"]');
   await expect(metaOgTitle).toHaveAttribute('content', title);
   const metaOgDescription = page.locator('meta[property="og:description"]');
   await expect(metaOgDescription).toHaveAttribute('content', description);
   const metaOgUrl = page.locator('meta[property="og:url"]');
-  await expect(metaOgUrl).toHaveAttribute('content', 'http://localhost:4173/icons');
+  const url = baseURL + '/icons';
+  await expect(metaOgUrl).toHaveAttribute('content', url);
   const metaOgImage = page.locator('meta[property="og:image"]');
   await expect(metaOgImage).toHaveAttribute(
     'content',
