@@ -1,8 +1,8 @@
 import type { MetaProps } from 'runes-meta-tags';
 
-const title = 'Getting Started - Svelte Radix v2'
-const description = 'How to get started with Svelte Radix v2'
-const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-radix'
+const title = 'Getting Started - Svelte Radix v2';
+const description = 'How to get started with Svelte Radix v2';
+const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-radix';
 
 export const load = ({ url }) => {
   const pageMetaTags: MetaProps = {

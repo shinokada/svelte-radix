@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
-const title = 'Custom icons - Svelte Radix'
-const description = 'How to create a custom icons with Svelte Radix'
-const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-radix'
+const title = 'Custom icons - Svelte Radix';
+const description = 'How to create a custom icons with Svelte Radix';
+const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-radix';
 test.beforeEach(async ({ page }) => {
   console.log(`Running ${test.info().title}`);
   await page.goto('/guide/custom-icons');
@@ -29,10 +29,7 @@ test('Custom icons page has expected meta og', async ({ page, baseURL }) => {
   const url = baseURL + '/guide/custom-icons';
   await expect(metaOgUrl).toHaveAttribute('content', url);
   const metaOgImage = page.locator('meta[property="og:image"]');
-  await expect(metaOgImage).toHaveAttribute(
-    'content',
-    imgUrl
-  );
+  await expect(metaOgImage).toHaveAttribute('content', imgUrl);
 });
 
 test('Custom icons page has expected meta twitter', async ({ page }) => {
@@ -41,8 +38,5 @@ test('Custom icons page has expected meta twitter', async ({ page }) => {
   const metaTwitterDescription = page.locator('meta[name="twitter:description"]');
   await expect(metaTwitterDescription).toHaveAttribute('content', description);
   const metaTwitterImage = page.locator('meta[name="twitter:image"]');
-  await expect(metaTwitterImage).toHaveAttribute(
-    'content',
-    imgUrl
-  );
+  await expect(metaTwitterImage).toHaveAttribute('content', imgUrl);
 });

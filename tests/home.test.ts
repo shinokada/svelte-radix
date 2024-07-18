@@ -1,9 +1,9 @@
 import { expect, test } from '@playwright/test';
 
-const title = 'Svelte Radix'
-const description = '310+ Radix SVG icon components for Svelte'
-const keywords = 'svelte, runes, sveltekit, Radix icons, svg icons, icons'
-const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-radix'
+const title = 'Svelte Radix';
+const description = '310+ Radix SVG icon components for Svelte';
+const keywords = 'svelte, runes, sveltekit, Radix icons, svg icons, icons';
+const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-radix';
 
 test.beforeEach(async ({ page }) => {
   console.log(`Running ${test.info().title}`);
@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('index page has expected h1', async ({ page }) => {
-	await expect(page.getByRole('heading', { name: title, level: 1 })).toBeVisible();
+  await expect(page.getByRole('heading', { name: title, level: 1 })).toBeVisible();
 });
 
 test('index page has expected meta title', async ({ page }) => {

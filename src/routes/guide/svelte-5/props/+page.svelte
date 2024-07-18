@@ -1,6 +1,6 @@
 <script lang="ts">
   import { HighlightCompo, CodeWrapper, Code, H2, H3 } from 'runes-webkit';
-  import { A } from 'svelte-5-ui-lib';
+  import { A, P } from 'svelte-5-ui-lib';
   import { Accessibility } from '$lib';
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -14,6 +14,15 @@
 <H2>Props</H2>
 
 <HighlightCompo codeLang="ts" code={modules['./md/props.md'] as string} />
+
+<H2>Types</H2>
+<P>
+  All icons are extended <A
+    href="https://github.com/sveltejs/svelte/blob/main/packages/svelte/elements.d.ts"
+    >SVGAttributes from svelte/elements</A
+  >.
+</P>
+<HighlightCompo codeLang="ts" code={modules['./md/types.md'] as string} />
 
 <H2>Size</H2>
 
@@ -86,34 +95,20 @@
   />
 </CodeWrapper>
 
-<H2>withEvents</H2>
-
-<p>
-  As default all icons are unfocusable. However you can add <Code>withEvents</Code> prop to make your
-  icons focusable.
-</p>
-
-<HighlightCompo codeLang="ts" code={modules['./md/withevents.md'] as string} />
-
-<p>
-  It is possible to add <Code>tabindex="0"</Code>, but it is not recommended for A11y. If you want
-  to use it add <Code>withEvents</Code> props.
-</p>
-
-<HighlightCompo codeLang="ts" code={modules['./md/withevents-2.md'] as string} />
-
-<H2>Events</H2>
-
-<p>
-  The following events are forwarded as the default. Since all the components are using <Code
-    >...restProps</Code
-  >, you can add any events.
-</p>
-
-<HighlightCompo codeLang="ts" code={modules['./md/events.md'] as string} />
-
 <H2>Passing down other attributes</H2>
-
-<p>Since all icons have <Code>...restProps</Code>, you can pass other attibutes as well.</p>
-
+<P>
+  You can pass other <A
+    target="_blank"
+    href="https://github.com/sveltejs/svelte/blob/main/packages/svelte/elements.d.ts"
+    >SVGAttributes</A
+  >.
+</P>
+<CodeWrapper>
+  <Accessibility 
+    id="my-svg" 
+    transform="rotate(45)"
+    class="hover:cursor-pointer dark:text-white"
+    onclick={() => alert('hello')}
+  />
+</CodeWrapper>
 <HighlightCompo codeLang="ts" code={modules['./md/passing-down-other-attributes.md'] as string} />
