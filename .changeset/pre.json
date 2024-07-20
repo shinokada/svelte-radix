@@ -4,8 +4,5 @@
   "initialVersions": {
     "svelte-radix": "2.0.0-next.0"
   },
-  "changesets": [
-    "fifty-mice-wave",
-    "sour-months-work"
-  ]
+  "changesets": ["fifty-mice-wave", "short-apricots-brake", "sour-months-work"]
 }
