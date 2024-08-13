@@ -1,5 +1,11 @@
 # svelte-radix
 
+## 2.0.0-next.4
+
+### Patch Changes
+
+- fix: remove svelte:component from Icon.svelte ([`1fb518a3094316976281519db34449d71a0854d3`](https://github.com/shinokada/svelte-radix/commit/1fb518a3094316976281519db34449d71a0854d3))
+
 ## 2.0.0-next.3
 
 ### Patch Changes
