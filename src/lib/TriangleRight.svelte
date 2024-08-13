@@ -1,16 +1,16 @@
-<script lang="ts">
+<script lang='ts'>
   import { getContext } from 'svelte';
-  import type { CtxType, Props } from './types';
-
+  import type { CtxType, Props } from './types'
+  
   const ctx: CtxType = getContext('iconCtx') ?? {};
 
-  let {
+  let { 
     size = ctx.size || '24',
     role = ctx.role || 'img',
     color = ctx.color || 'currentColor',
     title,
     desc,
-    ariaLabel = 'triangle right',
+    ariaLabel =  "triangle right" ,
     ...restProps
   }: Props = $props();
 
@@ -30,12 +30,12 @@
   viewBox="0 0 15 15"
 >
   {#if title?.id && title.title}
-    <title id={title.id}>{title.title}</title>
+    <title id="{title.id}">{title.title}</title>
   {/if}
   {#if desc?.id && desc.desc}
-    <desc id={desc.id}>{desc.desc}</desc>
+    <desc id="{desc.id}">{desc.desc}</desc>
   {/if}
-  <path d="M6 11L6 4L10.5 7.5L6 11Z" />
+       <path d="M6 11L6 4L10.5 7.5L6 11Z"  />  
 </svg>
 
 <!--
@@ -47,6 +47,6 @@
 @prop color = ctx.color || 'currentColor'
 @prop title
 @prop desc
-@prop ariaLabel = 'triangle right'
+@prop ariaLabel =  "triangle right"
 @prop ...restProps
 -->

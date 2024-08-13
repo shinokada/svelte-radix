@@ -1,16 +1,16 @@
-<script lang="ts">
+<script lang='ts'>
   import { getContext } from 'svelte';
-  import type { CtxType, Props } from './types';
-
+  import type { CtxType, Props } from './types'
+  
   const ctx: CtxType = getContext('iconCtx') ?? {};
 
-  let {
+  let { 
     size = ctx.size || '24',
     role = ctx.role || 'img',
     color = ctx.color || 'currentColor',
     title,
     desc,
-    ariaLabel = 'drag handle dots 1',
+    ariaLabel =  "drag handle dots 1" ,
     ...restProps
   }: Props = $props();
 
@@ -30,23 +30,12 @@
   viewBox="0 0 15 15"
 >
   {#if title?.id && title.title}
-    <title id={title.id}>{title.title}</title>
+    <title id="{title.id}">{title.title}</title>
   {/if}
   {#if desc?.id && desc.desc}
-    <desc id={desc.id}>{desc.desc}</desc>
+    <desc id="{desc.id}">{desc.desc}</desc>
   {/if}
-  <circle cx="4.5" cy="2.5" r=".6" /> <circle cx="4.5" cy="4.5" r=".6" />
-  <circle cx="4.5" cy="6.499" r=".6" /> <circle cx="4.5" cy="8.499" r=".6" />
-  <circle cx="4.5" cy="10.498" r=".6" /> <circle cx="4.5" cy="12.498" r=".6" />
-  <circle cx="6.5" cy="2.5" r=".6" /> <circle cx="6.5" cy="4.5" r=".6" />
-  <circle cx="6.5" cy="6.499" r=".6" /> <circle cx="6.5" cy="8.499" r=".6" />
-  <circle cx="6.5" cy="10.498" r=".6" /> <circle cx="6.5" cy="12.498" r=".6" />
-  <circle cx="8.499" cy="2.5" r=".6" /> <circle cx="8.499" cy="4.5" r=".6" />
-  <circle cx="8.499" cy="6.499" r=".6" /> <circle cx="8.499" cy="8.499" r=".6" />
-  <circle cx="8.499" cy="10.498" r=".6" /> <circle cx="8.499" cy="12.498" r=".6" />
-  <circle cx="10.499" cy="2.5" r=".6" /> <circle cx="10.499" cy="4.5" r=".6" />
-  <circle cx="10.499" cy="6.499" r=".6" /> <circle cx="10.499" cy="8.499" r=".6" />
-  <circle cx="10.499" cy="10.498" r=".6" /> <circle cx="10.499" cy="12.498" r=".6" />
+       <circle cx="4.5" cy="2.5" r=".6"  />   <circle cx="4.5" cy="4.5" r=".6"  />   <circle cx="4.5" cy="6.499" r=".6"  />   <circle cx="4.5" cy="8.499" r=".6"  />   <circle cx="4.5" cy="10.498" r=".6"  />   <circle cx="4.5" cy="12.498" r=".6"  />   <circle cx="6.5" cy="2.5" r=".6"  />   <circle cx="6.5" cy="4.5" r=".6"  />   <circle cx="6.5" cy="6.499" r=".6"  />   <circle cx="6.5" cy="8.499" r=".6"  />   <circle cx="6.5" cy="10.498" r=".6"  />   <circle cx="6.5" cy="12.498" r=".6"  />   <circle cx="8.499" cy="2.5" r=".6"  />   <circle cx="8.499" cy="4.5" r=".6"  />   <circle cx="8.499" cy="6.499" r=".6"  />   <circle cx="8.499" cy="8.499" r=".6"  />   <circle cx="8.499" cy="10.498" r=".6"  />   <circle cx="8.499" cy="12.498" r=".6"  />   <circle cx="10.499" cy="2.5" r=".6"  />   <circle cx="10.499" cy="4.5" r=".6"  />   <circle cx="10.499" cy="6.499" r=".6"  />   <circle cx="10.499" cy="8.499" r=".6"  />   <circle cx="10.499" cy="10.498" r=".6"  />   <circle cx="10.499" cy="12.498" r=".6"  />  
 </svg>
 
 <!--
@@ -58,6 +47,6 @@
 @prop color = ctx.color || 'currentColor'
 @prop title
 @prop desc
-@prop ariaLabel = 'drag handle dots 1'
+@prop ariaLabel =  "drag handle dots 1"
 @prop ...restProps
 -->

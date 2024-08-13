@@ -1,22 +1,29 @@
 <script lang="ts">
   import type { Component } from 'svelte';
-  import type { Props } from './types';
+  import type { Props } from './types'
 
-  interface IconProps extends Props {
-    icon: Component;
+  interface IconProps extends Props{
+    Icon: Component;
   }
 
-  let { icon, size = '24', role = 'img', ariaLabel = 'Icon', ...restProps }: IconProps = $props();
+  let { Icon, size = '24', color='currentColor', role = 'img', ariaLabel = 'Icon', ...restProps }: IconProps = $props();
 </script>
 
-<svelte:component this={icon} {...restProps} {role} {size} aria-label={ariaLabel} />
+<Icon 
+  {...restProps} 
+  {role}
+  {size}
+  {color}
+  {ariaLabel}
+/>
 
 <!--
 @component
 [Go to docs](https://svelte-radix.codewithshin.com/)
 ## Props
-@prop icon
+@prop Icon
 @prop size = '24'
+@prop color='currentColor'
 @prop role = 'img'
 @prop ariaLabel = 'Icon'
 @prop ...restProps
