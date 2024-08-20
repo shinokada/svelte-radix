@@ -1,13 +1,18 @@
 # Changelog
 
+## 1.1.1
+
+### Patch Changes
+
+- fix: add ^5.0.0-next.1" to peerDependencies ([`efda08071f8f800e8a7809352f73f4a6ec257802`](https://github.com/shinokada/svelte-radix/commit/efda08071f8f800e8a7809352f73f4a6ec257802))
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ## [1.1.0](https://github.com/shinokada/svelte-radix/compare/v1.0.3...v1.1.0) (2024-03-11)
 
-
 ### Features
 
-* add if statement for withEvents ([d1bab2f](https://github.com/shinokada/svelte-radix/commit/d1bab2f32806600bd7606941805dd58dd90f177e))
+- add if statement for withEvents ([d1bab2f](https://github.com/shinokada/svelte-radix/commit/d1bab2f32806600bd7606941805dd58dd90f177e))
 
 ### [1.0.3](https://github.com/shinokada/svelte-radix/compare/v1.0.2...v1.0.3) (2024-03-01)
 
