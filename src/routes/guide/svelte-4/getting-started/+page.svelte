@@ -19,19 +19,19 @@
 <h1>Getting Started - Svelte Radix v1</h1>
 
 <div class="my-8 flex gap-2">
-  <a href="https://github.com/sponsors/shinokada" target="_blank"
+  <a href="https://github.com/sponsors/shinokada" target="_blank" aria-label="GitHub Sponsor"
     ><img
       src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86"
       alt="sponsor"
     /></a
   >
-  <a href="https://www.npmjs.com/package/svelte-radix" rel="nofollow" target="_blank"
+  <a href="https://www.npmjs.com/package/svelte-radix" rel="nofollow" target="_blank" aria-label="npm svelte-radix"
     ><img src="https://img.shields.io/npm/v/svelte-radix" alt="npm" /></a
   >
-  <a href="https://opensource.org/licenses/MIT" rel="nofollow" target="_blank"
+  <a href="https://opensource.org/licenses/MIT" rel="nofollow" target="_blank" aria-label="MIT License"
     ><img src="https://img.shields.io/github/license/shinokada/svelte-radix" alt="License" /></a
   >
-  <a href="https://www.npmjs.com/package/svelte-radix" rel="nofollow" target="_blank"
+  <a href="https://www.npmjs.com/package/svelte-radix" rel="nofollow" target="_blank" aria-label="npm svelte-radix"
     ><img src="https://img.shields.io/npm/dw/svelte-radix.svg" alt="npm" /></a
   >
 </div>
