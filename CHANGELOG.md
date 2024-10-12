@@ -1,5 +1,11 @@
 # svelte-radix
 
+## 2.0.0-next.5
+
+### Patch Changes
+
+- types: update ([`93d55cc69ad1271536aa31ab341dc4b2bb8e9c46`](https://github.com/shinokada/svelte-radix/commit/93d55cc69ad1271536aa31ab341dc4b2bb8e9c46))
+
 ## 2.0.0-next.4
 
 ### Patch Changes

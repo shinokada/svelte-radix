@@ -63,3 +63,16 @@
   <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 9 1)" />
   <rect width="1" height="1" rx=".5" transform="matrix(0 1 1 0 11 1)" />
 </svg>
+
+<!--
+@component
+[Go to docs](https://svelte-radix.codewithshin.com/)
+## Props
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop ariaLabel = 'border right'
+@prop ...restProps
+-->

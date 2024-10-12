@@ -41,3 +41,16 @@
     d="M1 1H1.5H13.5H14V1.5V13.5V14H13.5H1.5H1V13.5V1.5V1ZM2 2V13H13V2H2Z"
   />
 </svg>
+
+<!--
+@component
+[Go to docs](https://svelte-radix.codewithshin.com/)
+## Props
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop ariaLabel = 'square'
+@prop ...restProps
+-->

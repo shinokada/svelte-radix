@@ -48,3 +48,16 @@
   <circle cx="10.499" cy="6.499" r=".6" /> <circle cx="10.499" cy="8.499" r=".6" />
   <circle cx="10.499" cy="10.498" r=".6" /> <circle cx="10.499" cy="12.498" r=".6" />
 </svg>
+
+<!--
+@component
+[Go to docs](https://svelte-radix.codewithshin.com/)
+## Props
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop ariaLabel = 'drag handle dots 1'
+@prop ...restProps
+-->

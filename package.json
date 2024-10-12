@@ -1,6 +1,6 @@
 {
   "name": "svelte-radix",
-  "version": "2.0.0-next.4",
+  "version": "2.0.0-next.5",
   "description": "310+ Radix SVG icon components for Svelte",
   "license": "MIT",
   "homepage": "https://svelte-radix.codewithshin.com/",
@@ -34,7 +34,7 @@
     "gen:exports": "svelte-lib-helpers exports",
     "copy:packagejson": "svelte-lib-helpers package",
     "gen:docs5": "svelte-lib-helpers docs5",
-    "lib-helpers": "npm run gen:docs5 && npm run package && npm run gen:exports && npm run copy:packagejson"
+    "lib-helpers": "pnpm format && pnpm gen:docs5 && pnpm package && pnpm gen:exports && pnpm copy:packagejson"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.9",

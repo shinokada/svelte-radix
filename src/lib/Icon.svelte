@@ -17,3 +17,15 @@
 </script>
 
 <Icon {...restProps} {role} {size} {color} {ariaLabel} />
+
+<!--
+@component
+[Go to docs](https://svelte-radix.codewithshin.com/)
+## Props
+@prop Icon
+@prop size = '24'
+@prop color = 'currentColor'
+@prop role = 'img'
+@prop ariaLabel = 'Icon'
+@prop ...restProps
+-->

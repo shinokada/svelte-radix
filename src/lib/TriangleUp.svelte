@@ -37,3 +37,16 @@
   {/if}
   <path d="M4 9H11L7.5 4.5L4 9Z" />
 </svg>
+
+<!--
+@component
+[Go to docs](https://svelte-radix.codewithshin.com/)
+## Props
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop ariaLabel = 'triangle up'
+@prop ...restProps
+-->

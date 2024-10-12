@@ -63,3 +63,16 @@
   <rect x="6" y="1" width="1" height="1" rx=".5" transform="rotate(90 6 1)" />
   <rect x="4" y="1" width="1" height="1" rx=".5" transform="rotate(90 4 1)" />
 </svg>
+
+<!--
+@component
+[Go to docs](https://svelte-radix.codewithshin.com/)
+## Props
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop ariaLabel = 'border left'
+@prop ...restProps
+-->

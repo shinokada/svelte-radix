@@ -49,3 +49,16 @@
   <rect x="7" y="9" width="1" height="1" rx=".5" />
   <rect x="7" y="11" width="1" height="1" rx=".5" />
 </svg>
+
+<!--
+@component
+[Go to docs](https://svelte-radix.codewithshin.com/)
+## Props
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop ariaLabel = 'border all'
+@prop ...restProps
+-->
