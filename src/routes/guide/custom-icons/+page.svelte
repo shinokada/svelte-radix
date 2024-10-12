@@ -19,7 +19,7 @@
 <HighlightCompo codeLang="ts" code={modules['./md/create-a-custom-component.md'] as string} />
 <H3>Svelte 5</H3>
 <HighlightCompo codeLang="ts" code={modules['./md/create-a-custom-component-2.md'] as string} />
-<p>
+<p></p>
 <p>
   This component, <Code>MyIcon.svelte</Code>, accepts an <Code>icon</Code> prop which you can use to
   pass in the specific icon component you want to display. The default configuration is also applied

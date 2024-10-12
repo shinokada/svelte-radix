@@ -1,16 +1,16 @@
-<script lang='ts'>
+<script lang="ts">
   import { getContext } from 'svelte';
-  import type { CtxType, Props } from './types'
-  
-  const ctx: CtxType = getContext('iconCtx') ?? {};
+  import type { BaseProps, Props } from './types';
 
-  let { 
+  const ctx: BaseProps = getContext('iconCtx') ?? {};
+
+  let {
     size = ctx.size || '24',
     role = ctx.role || 'img',
     color = ctx.color || 'currentColor',
     title,
     desc,
-    ariaLabel =  "triangle left" ,
+    ariaLabel = 'triangle left',
     ...restProps
   }: Props = $props();
 
@@ -30,23 +30,10 @@
   viewBox="0 0 15 15"
 >
   {#if title?.id && title.title}
-    <title id="{title.id}">{title.title}</title>
+    <title id={title.id}>{title.title}</title>
   {/if}
   {#if desc?.id && desc.desc}
-    <desc id="{desc.id}">{desc.desc}</desc>
+    <desc id={desc.id}>{desc.desc}</desc>
   {/if}
-       <path d="M9 4L9 11L4.5 7.5L9 4Z"  />  
+  <path d="M9 4L9 11L4.5 7.5L9 4Z" />
 </svg>
-
-<!--
-@component
-[Go to docs](https://svelte-radix.codewithshin.com/)
-## Props
-@prop size = ctx.size || '24'
-@prop role = ctx.role || 'img'
-@prop color = ctx.color || 'currentColor'
-@prop title
-@prop desc
-@prop ariaLabel =  "triangle left"
-@prop ...restProps
--->

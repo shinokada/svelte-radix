@@ -16,13 +16,25 @@
       alt="sponsor"
     /></a
   >
-  <a href="https://www.npmjs.com/package/svelte-radix" rel="nofollow" target="_blank" aria-label="npm svelte-radix"
+  <a
+    href="https://www.npmjs.com/package/svelte-radix"
+    rel="nofollow"
+    target="_blank"
+    aria-label="npm svelte-radix"
     ><img src="https://img.shields.io/npm/v/svelte-radix/next" alt="npm" /></a
   >
-  <a href="https://opensource.org/licenses/MIT" rel="nofollow" target="_blank" aria-label="MIT License"
+  <a
+    href="https://opensource.org/licenses/MIT"
+    rel="nofollow"
+    target="_blank"
+    aria-label="MIT License"
     ><img src="https://img.shields.io/github/license/shinokada/svelte-radix" alt="License" /></a
   >
-  <a href="https://www.npmjs.com/package/svelte-radix" rel="nofollow" target="_blank" aria-label="npm svelte-radix"
+  <a
+    href="https://www.npmjs.com/package/svelte-radix"
+    rel="nofollow"
+    target="_blank"
+    aria-label="npm svelte-radix"
     ><img src="https://img.shields.io/npm/dw/svelte-radix.svg" alt="npm" /></a
   >
 </div>
