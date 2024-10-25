@@ -1,1 +1,1 @@
-- Svelte 4 or 5 (without Runes)
+- Svelte 4 or 5

@@ -1,3 +1,3 @@
-npm create svelte@latest my-project
-cd my-project
-pnpm i -D svelte-radix
+npm create svelte@latest myapp
+cd myapp
+pnpm i -D svelte-radix@v1-latest
