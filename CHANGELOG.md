@@ -1,5 +1,27 @@
 # svelte-radix
 
+## 2.0.0
+
+### Patch Changes
+
+- feat: extends SVGAttributes<SVGElement> ([`3f98be2`](https://github.com/shinokada/svelte-radix/commit/3f98be2bb7620e840b009f94bf1a831884bd9b58))
+
+- types: update ([`93d55cc`](https://github.com/shinokada/svelte-radix/commit/93d55cc69ad1271536aa31ab341dc4b2bb8e9c46))
+
+- feat: 2.0.0
+
+- fix: peerDependencies ([`e0ccbb8`](https://github.com/shinokada/svelte-radix/commit/e0ccbb8d73c6b6df7fed54b3918f5823a06c6872))
+
+- fix: remove svelte:component from Icon.svelte ([`1fb518a`](https://github.com/shinokada/svelte-radix/commit/1fb518a3094316976281519db34449d71a0854d3))
+
+- feat: use runes-webkit-starter and update docs ([`cf8944b`](https://github.com/shinokada/svelte-radix/commit/cf8944b1342b819c811bb1d4fef11277d46ff1d6))
+
+## 2.0.0-next.6
+
+### Patch Changes
+
+- feat: 2.0.0
+
 ## 2.0.0-next.5
 
 ### Patch Changes
