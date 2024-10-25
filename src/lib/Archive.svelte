@@ -1,67 +1,56 @@
-<script>
+<script lang="ts">
   import { getContext } from 'svelte';
-  const ctx = getContext('iconCtx') ?? {};
-  export let size = ctx.size || '24';
-  export let role = ctx.role || 'img';
-  export let color = ctx.color || 'currentColor';
-  export let ariaLabel = 'archive,';
-  export let withEvents = false;
+  import type { BaseProps, Props } from './types';
+
+  const ctx: BaseProps = getContext('iconCtx') ?? {};
+
+  let {
+    size = ctx.size || '24',
+    role = ctx.role || 'img',
+    color = ctx.color || 'currentColor',
+    title,
+    desc,
+    ariaLabel = 'archive',
+    ...restProps
+  }: Props = $props();
+
+  let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
+  const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
-{#if withEvents}
-  <svg
-    width={size}
-    height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    on:click
-    on:keydown
-    on:keyup
-    on:focus
-    on:blur
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    on:mouseout
-    viewBox="0 0 15 15"
-    fill={color}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M3.30902 1C2.93025 1 2.58398 1.214 2.41459 1.55279L1.05279 4.27639C1.01807 4.34582 1 4.42238 1 4.5V13C1 13.5523 1.44772 14 2 14H13C13.5523 14 14 13.5523 14 13V4.5C14 4.42238 13.9819 4.34582 13.9472 4.27639L12.5854 1.55281C12.416 1.21403 12.0698 1.00003 11.691 1.00003L7.5 1.00001L3.30902 1ZM3.30902 2L7 2.00001V4H2.30902L3.30902 2ZM8 4V2.00002L11.691 2.00003L12.691 4H8ZM7.5 5H13V13H2V5H7.5ZM5.5 7C5.22386 7 5 7.22386 5 7.5C5 7.77614 5.22386 8 5.5 8H9.5C9.77614 8 10 7.77614 10 7.5C10 7.22386 9.77614 7 9.5 7H5.5Z"
-      fill="currentColor"
-    />
-  </svg>
-{:else}
-  <svg
-    width={size}
-    height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    viewBox="0 0 15 15"
-    fill={color}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M3.30902 1C2.93025 1 2.58398 1.214 2.41459 1.55279L1.05279 4.27639C1.01807 4.34582 1 4.42238 1 4.5V13C1 13.5523 1.44772 14 2 14H13C13.5523 14 14 13.5523 14 13V4.5C14 4.42238 13.9819 4.34582 13.9472 4.27639L12.5854 1.55281C12.416 1.21403 12.0698 1.00003 11.691 1.00003L7.5 1.00001L3.30902 1ZM3.30902 2L7 2.00001V4H2.30902L3.30902 2ZM8 4V2.00002L11.691 2.00003L12.691 4H8ZM7.5 5H13V13H2V5H7.5ZM5.5 7C5.22386 7 5 7.22386 5 7.5C5 7.77614 5.22386 8 5.5 8H9.5C9.77614 8 10 7.77614 10 7.5C10 7.22386 9.77614 7 9.5 7H5.5Z"
-      fill="currentColor"
-    />
-  </svg>
-{/if}
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  {...restProps}
+  {role}
+  width={size}
+  height={size}
+  fill={color}
+  aria-label={ariaLabel}
+  aria-describedby={hasDescription ? ariaDescribedby : undefined}
+  viewBox="0 0 15 15"
+>
+  {#if title?.id && title.title}
+    <title id={title.id}>{title.title}</title>
+  {/if}
+  {#if desc?.id && desc.desc}
+    <desc id={desc.id}>{desc.desc}</desc>
+  {/if}
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M3.30902 1C2.93025 1 2.58398 1.214 2.41459 1.55279L1.05279 4.27639C1.01807 4.34582 1 4.42238 1 4.5V13C1 13.5523 1.44772 14 2 14H13C13.5523 14 14 13.5523 14 13V4.5C14 4.42238 13.9819 4.34582 13.9472 4.27639L12.5854 1.55281C12.416 1.21403 12.0698 1.00003 11.691 1.00003L7.5 1.00001L3.30902 1ZM3.30902 2L7 2.00001V4H2.30902L3.30902 2ZM8 4V2.00002L11.691 2.00003L12.691 4H8ZM7.5 5H13V13H2V5H7.5ZM5.5 7C5.22386 7 5 7.22386 5 7.5C5 7.77614 5.22386 8 5.5 8H9.5C9.77614 8 10 7.77614 10 7.5C10 7.22386 9.77614 7 9.5 7H5.5Z"
+  />
+</svg>
 
 <!--
 @component
 [Go to docs](https://svelte-radix.codewithshin.com/)
 ## Props
-@prop export let size = ctx.size || '24';
-@prop export let role = ctx.role || 'img';
-@prop export let color = ctx.color || 'currentColor';
-@prop export let ariaLabel = 'archive,';
-@prop export let withEvents = false;
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop ariaLabel = 'archive'
+@prop ...restProps
 -->

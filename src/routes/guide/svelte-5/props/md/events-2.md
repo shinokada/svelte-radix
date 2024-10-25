@@ -1,0 +1,1 @@
+<Accessibility withEvents onclick="{handleClick}" />

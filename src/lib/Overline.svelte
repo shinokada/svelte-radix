@@ -1,67 +1,56 @@
-<script>
+<script lang="ts">
   import { getContext } from 'svelte';
-  const ctx = getContext('iconCtx') ?? {};
-  export let size = ctx.size || '24';
-  export let role = ctx.role || 'img';
-  export let color = ctx.color || 'currentColor';
-  export let ariaLabel = 'overline,';
-  export let withEvents = false;
+  import type { BaseProps, Props } from './types';
+
+  const ctx: BaseProps = getContext('iconCtx') ?? {};
+
+  let {
+    size = ctx.size || '24',
+    role = ctx.role || 'img',
+    color = ctx.color || 'currentColor',
+    title,
+    desc,
+    ariaLabel = 'overline',
+    ...restProps
+  }: Props = $props();
+
+  let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
+  const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
-{#if withEvents}
-  <svg
-    width={size}
-    height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    on:click
-    on:keydown
-    on:keyup
-    on:focus
-    on:blur
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    on:mouseout
-    viewBox="0 0 15 15"
-    fill={color}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M3.49985 1.10001C3.27894 1.10001 3.09985 1.27909 3.09985 1.50001C3.09985 1.72092 3.27894 1.90001 3.49985 1.90001H11.4999C11.7208 1.90001 11.8999 1.72092 11.8999 1.50001C11.8999 1.27909 11.7208 1.10001 11.4999 1.10001H3.49985ZM4.99995 4.25001C4.99995 3.97387 4.77609 3.75001 4.49995 3.75001C4.22381 3.75001 3.99995 3.97387 3.99995 4.25001V9.55001C3.99995 11.483 5.56695 13.05 7.49995 13.05C9.43295 13.05 11 11.483 11 9.55001V4.25001C11 3.97387 10.7761 3.75001 10.5 3.75001C10.2238 3.75001 9.99995 3.97387 9.99995 4.25001V9.55001C9.99995 10.9307 8.88066 12.05 7.49995 12.05C6.11924 12.05 4.99995 10.9307 4.99995 9.55001V4.25001Z"
-      fill="currentColor"
-    />
-  </svg>
-{:else}
-  <svg
-    width={size}
-    height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    viewBox="0 0 15 15"
-    fill={color}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M3.49985 1.10001C3.27894 1.10001 3.09985 1.27909 3.09985 1.50001C3.09985 1.72092 3.27894 1.90001 3.49985 1.90001H11.4999C11.7208 1.90001 11.8999 1.72092 11.8999 1.50001C11.8999 1.27909 11.7208 1.10001 11.4999 1.10001H3.49985ZM4.99995 4.25001C4.99995 3.97387 4.77609 3.75001 4.49995 3.75001C4.22381 3.75001 3.99995 3.97387 3.99995 4.25001V9.55001C3.99995 11.483 5.56695 13.05 7.49995 13.05C9.43295 13.05 11 11.483 11 9.55001V4.25001C11 3.97387 10.7761 3.75001 10.5 3.75001C10.2238 3.75001 9.99995 3.97387 9.99995 4.25001V9.55001C9.99995 10.9307 8.88066 12.05 7.49995 12.05C6.11924 12.05 4.99995 10.9307 4.99995 9.55001V4.25001Z"
-      fill="currentColor"
-    />
-  </svg>
-{/if}
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  {...restProps}
+  {role}
+  width={size}
+  height={size}
+  fill={color}
+  aria-label={ariaLabel}
+  aria-describedby={hasDescription ? ariaDescribedby : undefined}
+  viewBox="0 0 15 15"
+>
+  {#if title?.id && title.title}
+    <title id={title.id}>{title.title}</title>
+  {/if}
+  {#if desc?.id && desc.desc}
+    <desc id={desc.id}>{desc.desc}</desc>
+  {/if}
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M3.49985 1.10001C3.27894 1.10001 3.09985 1.27909 3.09985 1.50001C3.09985 1.72092 3.27894 1.90001 3.49985 1.90001H11.4999C11.7208 1.90001 11.8999 1.72092 11.8999 1.50001C11.8999 1.27909 11.7208 1.10001 11.4999 1.10001H3.49985ZM4.99995 4.25001C4.99995 3.97387 4.77609 3.75001 4.49995 3.75001C4.22381 3.75001 3.99995 3.97387 3.99995 4.25001V9.55001C3.99995 11.483 5.56695 13.05 7.49995 13.05C9.43295 13.05 11 11.483 11 9.55001V4.25001C11 3.97387 10.7761 3.75001 10.5 3.75001C10.2238 3.75001 9.99995 3.97387 9.99995 4.25001V9.55001C9.99995 10.9307 8.88066 12.05 7.49995 12.05C6.11924 12.05 4.99995 10.9307 4.99995 9.55001V4.25001Z"
+  />
+</svg>
 
 <!--
 @component
 [Go to docs](https://svelte-radix.codewithshin.com/)
 ## Props
-@prop export let size = ctx.size || '24';
-@prop export let role = ctx.role || 'img';
-@prop export let color = ctx.color || 'currentColor';
-@prop export let ariaLabel = 'overline,';
-@prop export let withEvents = false;
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop ariaLabel = 'overline'
+@prop ...restProps
 -->

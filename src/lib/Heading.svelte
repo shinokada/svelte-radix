@@ -1,67 +1,56 @@
-<script>
+<script lang="ts">
   import { getContext } from 'svelte';
-  const ctx = getContext('iconCtx') ?? {};
-  export let size = ctx.size || '24';
-  export let role = ctx.role || 'img';
-  export let color = ctx.color || 'currentColor';
-  export let ariaLabel = 'heading,';
-  export let withEvents = false;
+  import type { BaseProps, Props } from './types';
+
+  const ctx: BaseProps = getContext('iconCtx') ?? {};
+
+  let {
+    size = ctx.size || '24',
+    role = ctx.role || 'img',
+    color = ctx.color || 'currentColor',
+    title,
+    desc,
+    ariaLabel = 'heading',
+    ...restProps
+  }: Props = $props();
+
+  let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
+  const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
-{#if withEvents}
-  <svg
-    width={size}
-    height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    on:click
-    on:keydown
-    on:keyup
-    on:focus
-    on:blur
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    on:mouseout
-    viewBox="0 0 15 15"
-    fill={color}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M8.75432 2.0502C8.50579 2.0502 8.30432 2.25167 8.30432 2.5002C8.30432 2.74873 8.50579 2.9502 8.75432 2.9502H9.94997V7.05004H5.04997V2.9502H6.25432C6.50285 2.9502 6.70432 2.74873 6.70432 2.5002C6.70432 2.25167 6.50285 2.0502 6.25432 2.0502H2.75432C2.50579 2.0502 2.30432 2.25167 2.30432 2.5002C2.30432 2.74873 2.50579 2.9502 2.75432 2.9502H3.94997V12.0502H2.75432C2.50579 12.0502 2.30432 12.2517 2.30432 12.5002C2.30432 12.7487 2.50579 12.9502 2.75432 12.9502H6.25432C6.50285 12.9502 6.70432 12.7487 6.70432 12.5002C6.70432 12.2517 6.50285 12.0502 6.25432 12.0502H5.04997V7.95004H9.94997V12.0502H8.75432C8.50579 12.0502 8.30432 12.2517 8.30432 12.5002C8.30432 12.7487 8.50579 12.9502 8.75432 12.9502H12.2543C12.5028 12.9502 12.7043 12.7487 12.7043 12.5002C12.7043 12.2517 12.5028 12.0502 12.2543 12.0502H11.05V2.9502H12.2543C12.5028 2.9502 12.7043 2.74873 12.7043 2.5002C12.7043 2.25167 12.5028 2.0502 12.2543 2.0502H8.75432Z"
-      fill="currentColor"
-    />
-  </svg>
-{:else}
-  <svg
-    width={size}
-    height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    viewBox="0 0 15 15"
-    fill={color}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M8.75432 2.0502C8.50579 2.0502 8.30432 2.25167 8.30432 2.5002C8.30432 2.74873 8.50579 2.9502 8.75432 2.9502H9.94997V7.05004H5.04997V2.9502H6.25432C6.50285 2.9502 6.70432 2.74873 6.70432 2.5002C6.70432 2.25167 6.50285 2.0502 6.25432 2.0502H2.75432C2.50579 2.0502 2.30432 2.25167 2.30432 2.5002C2.30432 2.74873 2.50579 2.9502 2.75432 2.9502H3.94997V12.0502H2.75432C2.50579 12.0502 2.30432 12.2517 2.30432 12.5002C2.30432 12.7487 2.50579 12.9502 2.75432 12.9502H6.25432C6.50285 12.9502 6.70432 12.7487 6.70432 12.5002C6.70432 12.2517 6.50285 12.0502 6.25432 12.0502H5.04997V7.95004H9.94997V12.0502H8.75432C8.50579 12.0502 8.30432 12.2517 8.30432 12.5002C8.30432 12.7487 8.50579 12.9502 8.75432 12.9502H12.2543C12.5028 12.9502 12.7043 12.7487 12.7043 12.5002C12.7043 12.2517 12.5028 12.0502 12.2543 12.0502H11.05V2.9502H12.2543C12.5028 2.9502 12.7043 2.74873 12.7043 2.5002C12.7043 2.25167 12.5028 2.0502 12.2543 2.0502H8.75432Z"
-      fill="currentColor"
-    />
-  </svg>
-{/if}
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  {...restProps}
+  {role}
+  width={size}
+  height={size}
+  fill={color}
+  aria-label={ariaLabel}
+  aria-describedby={hasDescription ? ariaDescribedby : undefined}
+  viewBox="0 0 15 15"
+>
+  {#if title?.id && title.title}
+    <title id={title.id}>{title.title}</title>
+  {/if}
+  {#if desc?.id && desc.desc}
+    <desc id={desc.id}>{desc.desc}</desc>
+  {/if}
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M8.75432 2.0502C8.50579 2.0502 8.30432 2.25167 8.30432 2.5002C8.30432 2.74873 8.50579 2.9502 8.75432 2.9502H9.94997V7.05004H5.04997V2.9502H6.25432C6.50285 2.9502 6.70432 2.74873 6.70432 2.5002C6.70432 2.25167 6.50285 2.0502 6.25432 2.0502H2.75432C2.50579 2.0502 2.30432 2.25167 2.30432 2.5002C2.30432 2.74873 2.50579 2.9502 2.75432 2.9502H3.94997V12.0502H2.75432C2.50579 12.0502 2.30432 12.2517 2.30432 12.5002C2.30432 12.7487 2.50579 12.9502 2.75432 12.9502H6.25432C6.50285 12.9502 6.70432 12.7487 6.70432 12.5002C6.70432 12.2517 6.50285 12.0502 6.25432 12.0502H5.04997V7.95004H9.94997V12.0502H8.75432C8.50579 12.0502 8.30432 12.2517 8.30432 12.5002C8.30432 12.7487 8.50579 12.9502 8.75432 12.9502H12.2543C12.5028 12.9502 12.7043 12.7487 12.7043 12.5002C12.7043 12.2517 12.5028 12.0502 12.2543 12.0502H11.05V2.9502H12.2543C12.5028 2.9502 12.7043 2.74873 12.7043 2.5002C12.7043 2.25167 12.5028 2.0502 12.2543 2.0502H8.75432Z"
+  />
+</svg>
 
 <!--
 @component
 [Go to docs](https://svelte-radix.codewithshin.com/)
 ## Props
-@prop export let size = ctx.size || '24';
-@prop export let role = ctx.role || 'img';
-@prop export let color = ctx.color || 'currentColor';
-@prop export let ariaLabel = 'heading,';
-@prop export let withEvents = false;
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop ariaLabel = 'heading'
+@prop ...restProps
 -->

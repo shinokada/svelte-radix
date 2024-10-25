@@ -1,67 +1,56 @@
-<script>
+<script lang="ts">
   import { getContext } from 'svelte';
-  const ctx = getContext('iconCtx') ?? {};
-  export let size = ctx.size || '24';
-  export let role = ctx.role || 'img';
-  export let color = ctx.color || 'currentColor';
-  export let ariaLabel = 'thick arrow left,';
-  export let withEvents = false;
+  import type { BaseProps, Props } from './types';
+
+  const ctx: BaseProps = getContext('iconCtx') ?? {};
+
+  let {
+    size = ctx.size || '24',
+    role = ctx.role || 'img',
+    color = ctx.color || 'currentColor',
+    title,
+    desc,
+    ariaLabel = 'thick arrow left',
+    ...restProps
+  }: Props = $props();
+
+  let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
+  const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
-{#if withEvents}
-  <svg
-    width={size}
-    height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    on:click
-    on:keydown
-    on:keyup
-    on:focus
-    on:blur
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    on:mouseout
-    viewBox="0 0 15 15"
-    fill={color}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M1 7.5C1 7.66148 1.07798 7.81301 1.20938 7.90687L8.20938 12.9069C8.36179 13.0157 8.56226 13.0303 8.72879 12.9446C8.89533 12.8589 9 12.6873 9 12.5L9 10L11.5 10C11.7761 10 12 9.77614 12 9.5L12 5.5C12 5.22386 11.7761 5 11.5 5L9 5L9 2.5C9 2.31271 8.89533 2.14112 8.72879 2.05542C8.56226 1.96972 8.36179 1.98427 8.20938 2.09313L1.20938 7.09314C1.07798 7.18699 1 7.33853 1 7.5ZM8 3.4716L8 5.5C8 5.77614 8.22386 6 8.5 6L11 6L11 9L8.5 9C8.22386 9 8 9.22386 8 9.5L8 11.5284L2.36023 7.5L8 3.4716Z"
-      fill="currentColor"
-    />
-  </svg>
-{:else}
-  <svg
-    width={size}
-    height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    viewBox="0 0 15 15"
-    fill={color}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M1 7.5C1 7.66148 1.07798 7.81301 1.20938 7.90687L8.20938 12.9069C8.36179 13.0157 8.56226 13.0303 8.72879 12.9446C8.89533 12.8589 9 12.6873 9 12.5L9 10L11.5 10C11.7761 10 12 9.77614 12 9.5L12 5.5C12 5.22386 11.7761 5 11.5 5L9 5L9 2.5C9 2.31271 8.89533 2.14112 8.72879 2.05542C8.56226 1.96972 8.36179 1.98427 8.20938 2.09313L1.20938 7.09314C1.07798 7.18699 1 7.33853 1 7.5ZM8 3.4716L8 5.5C8 5.77614 8.22386 6 8.5 6L11 6L11 9L8.5 9C8.22386 9 8 9.22386 8 9.5L8 11.5284L2.36023 7.5L8 3.4716Z"
-      fill="currentColor"
-    />
-  </svg>
-{/if}
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  {...restProps}
+  {role}
+  width={size}
+  height={size}
+  fill={color}
+  aria-label={ariaLabel}
+  aria-describedby={hasDescription ? ariaDescribedby : undefined}
+  viewBox="0 0 15 15"
+>
+  {#if title?.id && title.title}
+    <title id={title.id}>{title.title}</title>
+  {/if}
+  {#if desc?.id && desc.desc}
+    <desc id={desc.id}>{desc.desc}</desc>
+  {/if}
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M1 7.5C1 7.66148 1.07798 7.81301 1.20938 7.90687L8.20938 12.9069C8.36179 13.0157 8.56226 13.0303 8.72879 12.9446C8.89533 12.8589 9 12.6873 9 12.5L9 10L11.5 10C11.7761 10 12 9.77614 12 9.5L12 5.5C12 5.22386 11.7761 5 11.5 5L9 5L9 2.5C9 2.31271 8.89533 2.14112 8.72879 2.05542C8.56226 1.96972 8.36179 1.98427 8.20938 2.09313L1.20938 7.09314C1.07798 7.18699 1 7.33853 1 7.5ZM8 3.4716L8 5.5C8 5.77614 8.22386 6 8.5 6L11 6L11 9L8.5 9C8.22386 9 8 9.22386 8 9.5L8 11.5284L2.36023 7.5L8 3.4716Z"
+  />
+</svg>
 
 <!--
 @component
 [Go to docs](https://svelte-radix.codewithshin.com/)
 ## Props
-@prop export let size = ctx.size || '24';
-@prop export let role = ctx.role || 'img';
-@prop export let color = ctx.color || 'currentColor';
-@prop export let ariaLabel = 'thick arrow left,';
-@prop export let withEvents = false;
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop ariaLabel = 'thick arrow left'
+@prop ...restProps
 -->

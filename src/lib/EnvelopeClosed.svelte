@@ -1,67 +1,56 @@
-<script>
+<script lang="ts">
   import { getContext } from 'svelte';
-  const ctx = getContext('iconCtx') ?? {};
-  export let size = ctx.size || '24';
-  export let role = ctx.role || 'img';
-  export let color = ctx.color || 'currentColor';
-  export let ariaLabel = 'envelope closed,';
-  export let withEvents = false;
+  import type { BaseProps, Props } from './types';
+
+  const ctx: BaseProps = getContext('iconCtx') ?? {};
+
+  let {
+    size = ctx.size || '24',
+    role = ctx.role || 'img',
+    color = ctx.color || 'currentColor',
+    title,
+    desc,
+    ariaLabel = 'envelope closed',
+    ...restProps
+  }: Props = $props();
+
+  let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
+  const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
-{#if withEvents}
-  <svg
-    width={size}
-    height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    on:click
-    on:keydown
-    on:keyup
-    on:focus
-    on:blur
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    on:mouseout
-    viewBox="0 0 15 15"
-    fill={color}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M1 2C0.447715 2 0 2.44772 0 3V12C0 12.5523 0.447715 13 1 13H14C14.5523 13 15 12.5523 15 12V3C15 2.44772 14.5523 2 14 2H1ZM1 3L14 3V3.92494C13.9174 3.92486 13.8338 3.94751 13.7589 3.99505L7.5 7.96703L1.24112 3.99505C1.16621 3.94751 1.0826 3.92486 1 3.92494V3ZM1 4.90797V12H14V4.90797L7.74112 8.87995C7.59394 8.97335 7.40606 8.97335 7.25888 8.87995L1 4.90797Z"
-      fill="currentColor"
-    />
-  </svg>
-{:else}
-  <svg
-    width={size}
-    height={size}
-    {...$$restProps}
-    {role}
-    aria-label={ariaLabel}
-    viewBox="0 0 15 15"
-    fill={color}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M1 2C0.447715 2 0 2.44772 0 3V12C0 12.5523 0.447715 13 1 13H14C14.5523 13 15 12.5523 15 12V3C15 2.44772 14.5523 2 14 2H1ZM1 3L14 3V3.92494C13.9174 3.92486 13.8338 3.94751 13.7589 3.99505L7.5 7.96703L1.24112 3.99505C1.16621 3.94751 1.0826 3.92486 1 3.92494V3ZM1 4.90797V12H14V4.90797L7.74112 8.87995C7.59394 8.97335 7.40606 8.97335 7.25888 8.87995L1 4.90797Z"
-      fill="currentColor"
-    />
-  </svg>
-{/if}
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  {...restProps}
+  {role}
+  width={size}
+  height={size}
+  fill={color}
+  aria-label={ariaLabel}
+  aria-describedby={hasDescription ? ariaDescribedby : undefined}
+  viewBox="0 0 15 15"
+>
+  {#if title?.id && title.title}
+    <title id={title.id}>{title.title}</title>
+  {/if}
+  {#if desc?.id && desc.desc}
+    <desc id={desc.id}>{desc.desc}</desc>
+  {/if}
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M1 2C0.447715 2 0 2.44772 0 3V12C0 12.5523 0.447715 13 1 13H14C14.5523 13 15 12.5523 15 12V3C15 2.44772 14.5523 2 14 2H1ZM1 3L14 3V3.92494C13.9174 3.92486 13.8338 3.94751 13.7589 3.99505L7.5 7.96703L1.24112 3.99505C1.16621 3.94751 1.0826 3.92486 1 3.92494V3ZM1 4.90797V12H14V4.90797L7.74112 8.87995C7.59394 8.97335 7.40606 8.97335 7.25888 8.87995L1 4.90797Z"
+  />
+</svg>
 
 <!--
 @component
 [Go to docs](https://svelte-radix.codewithshin.com/)
 ## Props
-@prop export let size = ctx.size || '24';
-@prop export let role = ctx.role || 'img';
-@prop export let color = ctx.color || 'currentColor';
-@prop export let ariaLabel = 'envelope closed,';
-@prop export let withEvents = false;
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop ariaLabel = 'envelope closed'
+@prop ...restProps
 -->
