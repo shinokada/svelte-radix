@@ -4,7 +4,7 @@ const title = 'Getting Started - Svelte Radix v2';
 const description = 'How to get started with Svelte Radix v2';
 const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-radix';
 
-export const load = ({ url }) => {
+export const load = () => {
   const pageMetaTags: MetaProps = {
     title,
     description,
