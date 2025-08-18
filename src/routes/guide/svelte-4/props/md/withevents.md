@@ -1,1 +1,1 @@
-<Accessibility withEvents on:click={handleClick}/> 
+<Accessibility withEvents on:click={handleClick}/>
