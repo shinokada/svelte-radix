@@ -12,7 +12,6 @@
   } from 'runes-webkit';
 
   let { data } = $props();
-  console.log('cards:', cards);
 
   const brand = {
     title: `${removeHyphensAndCapitalize(__NAME__)}`,
