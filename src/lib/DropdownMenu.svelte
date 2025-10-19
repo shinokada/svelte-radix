@@ -1,45 +1,46 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import type { BaseProps, Props } from './types';
+  import { getContext } from 'svelte';
+  import type { BaseProps, Props } from './types';
 
-	const ctx: BaseProps = getContext('iconCtx') ?? {};
+  const ctx: BaseProps = getContext('iconCtx') ?? {};
 
-	let {
-		size = ctx.size || '24',
-		role = ctx.role || 'img',
-		color = ctx.color || 'currentColor',
-		title,
-		desc,
-		ariaLabel = 'dropdown menu',
-		...restProps
-	}: Props = $props();
+  let {
+    size = ctx.size || '24',
+    role = ctx.role || 'img',
+    color = ctx.color || 'currentColor',
+    title,
+    desc,
+    focusable = 'false',
+    ariaLabel,
+    ...restProps
+  }: Props = $props();
 
-	let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
-	const hasDescription = $derived(!!(title?.id || desc?.id));
+  let ariaDescribedby = $derived(`${title?.id || ''} ${desc?.id || ''}`.trim());
+  const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
 <svg
-	xmlns="http://www.w3.org/2000/svg"
-	{...restProps}
-	{role}
-	width={size}
-	height={size}
-	fill={color}
-	aria-label={ariaLabel}
-	aria-describedby={hasDescription ? ariaDescribedby : undefined}
-	viewBox="0 0 15 15"
+  xmlns="http://www.w3.org/2000/svg"
+  {...restProps}
+  {role}
+  width={size}
+  height={size}
+  fill={color}
+  {focusable}
+  aria-label={title?.id ? undefined : ariaLabel}
+  aria-labelledby={title?.id || undefined}
+  aria-describedby={hasDescription ? ariaDescribedby : undefined}
+  viewBox="0 0 15 15"
 >
-	{#if title?.id && title.title}
-		<title id={title.id}>{title.title}</title>
-	{/if}
-	{#if desc?.id && desc.desc}
-		<desc id={desc.id}>{desc.desc}</desc>
-	{/if}
-	<path
-		fill-rule="evenodd"
-		clip-rule="evenodd"
-		d="M7.49999 3.09998C7.27907 3.09998 7.09999 3.27906 7.09999 3.49998C7.09999 3.72089 7.27907 3.89998 7.49999 3.89998H14.5C14.7209 3.89998 14.9 3.72089 14.9 3.49998C14.9 3.27906 14.7209 3.09998 14.5 3.09998H7.49999ZM7.49998 5.1C7.27907 5.1 7.09998 5.27908 7.09998 5.5C7.09998 5.72091 7.27907 5.9 7.49998 5.9H14.5C14.7209 5.9 14.9 5.72091 14.9 5.5C14.9 5.27908 14.7209 5.1 14.5 5.1H7.49998ZM7.1 7.5C7.1 7.27908 7.27909 7.1 7.5 7.1H14.5C14.7209 7.1 14.9 7.27908 14.9 7.5C14.9 7.72091 14.7209 7.9 14.5 7.9H7.5C7.27909 7.9 7.1 7.72091 7.1 7.5ZM7.49998 9.1C7.27907 9.1 7.09998 9.27908 7.09998 9.5C7.09998 9.72091 7.27907 9.9 7.49998 9.9H14.5C14.7209 9.9 14.9 9.72091 14.9 9.5C14.9 9.27908 14.7209 9.1 14.5 9.1H7.49998ZM7.09998 11.5C7.09998 11.2791 7.27907 11.1 7.49998 11.1H14.5C14.7209 11.1 14.9 11.2791 14.9 11.5C14.9 11.7209 14.7209 11.9 14.5 11.9H7.49998C7.27907 11.9 7.09998 11.7209 7.09998 11.5ZM2.5 9.25003L5 6.00003H0L2.5 9.25003Z"
-	/>
+  {#if title?.id && title.title}
+    <title id={title.id}>{title.title}</title>
+  {/if}
+  {#if desc?.id && desc.desc}
+    <desc id={desc.id}>{desc.desc}</desc>
+  {/if}
+  <path
+    d="M14.5811 11.1087C14.763 11.1463 14.9004 11.3073 14.9004 11.5004C14.9002 11.6933 14.763 11.8545 14.5811 11.892L14.5 11.9007H7.5C7.27921 11.9007 7.09981 11.7211 7.09961 11.5004C7.09961 11.2794 7.27909 11.1 7.5 11.1H14.5L14.5811 11.1087ZM14.5811 9.10875C14.763 9.14627 14.9004 9.30725 14.9004 9.50035C14.9002 9.69332 14.763 9.85449 14.5811 9.89195L14.5 9.90074H7.5C7.27921 9.90074 7.09981 9.72109 7.09961 9.50035C7.09961 9.27944 7.27909 9.09996 7.5 9.09996H14.5L14.5811 9.10875ZM2.5 9.25035L0 6.00035H5L2.5 9.25035ZM14.5811 7.10875C14.7631 7.14626 14.9004 7.30725 14.9004 7.50035C14.9002 7.69332 14.763 7.85449 14.5811 7.89195L14.5 7.90074H7.5C7.27921 7.90074 7.09981 7.72109 7.09961 7.50035C7.09961 7.27944 7.27909 7.09996 7.5 7.09996H14.5L14.5811 7.10875ZM14.5811 5.10875C14.763 5.14627 14.9004 5.30725 14.9004 5.50035C14.9002 5.69332 14.763 5.85449 14.5811 5.89195L14.5 5.90074H7.5C7.27921 5.90074 7.09981 5.72109 7.09961 5.50035C7.09961 5.27944 7.27909 5.09996 7.5 5.09996H14.5L14.5811 5.10875ZM14.5811 3.10875C14.763 3.14627 14.9004 3.30725 14.9004 3.50035C14.9002 3.69331 14.763 3.8545 14.5811 3.89195L14.5 3.90074H7.5C7.27922 3.90074 7.09982 3.72109 7.09961 3.50035C7.09961 3.27944 7.27909 3.09996 7.5 3.09996H14.5L14.5811 3.10875Z"
+  />
 </svg>
 
 <!--
@@ -51,6 +52,7 @@
 @prop color = ctx.color || 'currentColor'
 @prop title
 @prop desc
-@prop ariaLabel = 'dropdown menu'
+@prop focusable = 'false'
+@prop ariaLabel
 @prop ...restProps
 -->

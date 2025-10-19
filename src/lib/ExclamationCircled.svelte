@@ -1,0 +1,58 @@
+<script lang="ts">
+  import { getContext } from 'svelte';
+  import type { BaseProps, Props } from './types';
+
+  const ctx: BaseProps = getContext('iconCtx') ?? {};
+
+  let {
+    size = ctx.size || '24',
+    role = ctx.role || 'img',
+    color = ctx.color || 'currentColor',
+    title,
+    desc,
+    focusable = 'false',
+    ariaLabel,
+    ...restProps
+  }: Props = $props();
+
+  let ariaDescribedby = $derived(`${title?.id || ''} ${desc?.id || ''}`.trim());
+  const hasDescription = $derived(!!(title?.id || desc?.id));
+</script>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  {...restProps}
+  {role}
+  width={size}
+  height={size}
+  fill={color}
+  {focusable}
+  aria-label={title?.id ? undefined : ariaLabel}
+  aria-labelledby={title?.id || undefined}
+  aria-describedby={hasDescription ? ariaDescribedby : undefined}
+  viewBox="0 0 15 15"
+>
+  {#if title?.id && title.title}
+    <title id={title.id}>{title.title}</title>
+  {/if}
+  {#if desc?.id && desc.desc}
+    <desc id={desc.id}>{desc.desc}</desc>
+  {/if}
+  <path
+    d="M7.49915 0.877045C11.1566 0.877045 14.1218 3.84178 14.1222 7.49911C14.1222 11.1568 11.1568 14.1222 7.49915 14.1222C3.84181 14.1218 0.877075 11.1565 0.877075 7.49911C0.877486 3.84203 3.84206 0.877456 7.49915 0.877045ZM7.49915 1.82626C4.36673 1.82667 1.8267 4.3667 1.82629 7.49911C1.82629 10.6319 4.36648 13.1716 7.49915 13.172C10.6321 13.172 13.172 10.6321 13.172 7.49911C13.1716 4.36645 10.6319 1.82626 7.49915 1.82626ZM7.50012 9.72568C7.91422 9.72568 8.24994 10.0616 8.25012 10.4757C8.25012 10.8899 7.91434 11.2257 7.50012 11.2257C7.08591 11.2257 6.75012 10.8899 6.75012 10.4757C6.7503 10.0616 7.08602 9.72568 7.50012 9.72568ZM7.50012 3.78622C7.88229 3.78622 8.18766 4.10453 8.17297 4.48642L8.01965 8.4874C8.00874 8.76622 7.7792 8.98642 7.50012 8.98642C7.22105 8.98641 6.9915 8.76621 6.98059 8.4874L6.82727 4.48642C6.81258 4.10454 7.11796 3.78624 7.50012 3.78622Z"
+  />
+</svg>
+
+<!--
+@component
+[Go to docs](https://svelte-radix.codewithshin.com/)
+## Props
+@prop size = ctx.size || '24'
+@prop role = ctx.role || 'img'
+@prop color = ctx.color || 'currentColor'
+@prop title
+@prop desc
+@prop focusable = 'false'
+@prop ariaLabel
+@prop ...restProps
+-->

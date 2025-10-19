@@ -1,7 +1,7 @@
 {
   "name": "svelte-radix",
-  "version": "2.0.2",
-  "description": "310+ Radix SVG icon components for Svelte",
+  "version": "3.0.0",
+  "description": "Radix SVG icon components for Svelte",
   "license": "MIT",
   "homepage": "https://svelte-radix.codewithshin.com/",
   "author": {
@@ -24,7 +24,8 @@
   "contributors": [
     {
       "name": "radix-ui/icons",
-      "url": "https://github.com/radix-ui/icons"
+      "url": "https://github.com/radix-ui/icons",
+      "iconVersion": "1.3.2"
     }
   ],
   "scripts": {
@@ -112,6 +113,11 @@
     ".": {
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js",
+      "default": "./dist/types.js"
     },
     "./Accessibility.svelte": {
       "types": "./dist/Accessibility.svelte.d.ts",
@@ -517,6 +523,10 @@
       "types": "./dist/Dashboard.svelte.d.ts",
       "svelte": "./dist/Dashboard.svelte"
     },
+    "./Database.svelte": {
+      "types": "./dist/Database.svelte.d.ts",
+      "svelte": "./dist/Database.svelte"
+    },
     "./Desktop.svelte": {
       "types": "./dist/Desktop.svelte.d.ts",
       "svelte": "./dist/Desktop.svelte"
@@ -625,6 +635,14 @@
       "types": "./dist/Eraser.svelte.d.ts",
       "svelte": "./dist/Eraser.svelte"
     },
+    "./ExclamationCircled.svelte": {
+      "types": "./dist/ExclamationCircled.svelte.d.ts",
+      "svelte": "./dist/ExclamationCircled.svelte"
+    },
+    "./ExclamationMark.svelte": {
+      "types": "./dist/ExclamationMark.svelte.d.ts",
+      "svelte": "./dist/ExclamationMark.svelte"
+    },
     "./ExclamationTriangle.svelte": {
       "types": "./dist/ExclamationTriangle.svelte.d.ts",
       "svelte": "./dist/ExclamationTriangle.svelte"
@@ -677,6 +695,10 @@
       "types": "./dist/FileText.svelte.d.ts",
       "svelte": "./dist/FileText.svelte"
     },
+    "./Filter.svelte": {
+      "types": "./dist/Filter.svelte.d.ts",
+      "svelte": "./dist/Filter.svelte"
+    },
     "./FontBold.svelte": {
       "types": "./dist/FontBold.svelte.d.ts",
       "svelte": "./dist/FontBold.svelte"
@@ -720,6 +742,10 @@
     "./Globe.svelte": {
       "types": "./dist/Globe.svelte.d.ts",
       "svelte": "./dist/Globe.svelte"
+    },
+    "./Globe2.svelte": {
+      "types": "./dist/Globe2.svelte.d.ts",
+      "svelte": "./dist/Globe2.svelte"
     },
     "./Grid.svelte": {
       "types": "./dist/Grid.svelte.d.ts",
@@ -913,6 +939,10 @@
       "types": "./dist/MaskOn.svelte.d.ts",
       "svelte": "./dist/MaskOn.svelte"
     },
+    "./Minimize.svelte": {
+      "types": "./dist/Minimize.svelte.d.ts",
+      "svelte": "./dist/Minimize.svelte"
+    },
     "./Minus.svelte": {
       "types": "./dist/Minus.svelte.d.ts",
       "svelte": "./dist/Minus.svelte"
@@ -969,6 +999,30 @@
       "types": "./dist/Padding.svelte.d.ts",
       "svelte": "./dist/Padding.svelte"
     },
+    "./PanelBottom.svelte": {
+      "types": "./dist/PanelBottom.svelte.d.ts",
+      "svelte": "./dist/PanelBottom.svelte"
+    },
+    "./PanelBottomMinimized.svelte": {
+      "types": "./dist/PanelBottomMinimized.svelte.d.ts",
+      "svelte": "./dist/PanelBottomMinimized.svelte"
+    },
+    "./PanelLeft.svelte": {
+      "types": "./dist/PanelLeft.svelte.d.ts",
+      "svelte": "./dist/PanelLeft.svelte"
+    },
+    "./PanelLeftMinimized.svelte": {
+      "types": "./dist/PanelLeftMinimized.svelte.d.ts",
+      "svelte": "./dist/PanelLeftMinimized.svelte"
+    },
+    "./PanelRight.svelte": {
+      "types": "./dist/PanelRight.svelte.d.ts",
+      "svelte": "./dist/PanelRight.svelte"
+    },
+    "./PanelRightMinimized.svelte": {
+      "types": "./dist/PanelRightMinimized.svelte.d.ts",
+      "svelte": "./dist/PanelRightMinimized.svelte"
+    },
     "./PaperPlane.svelte": {
       "types": "./dist/PaperPlane.svelte.d.ts",
       "svelte": "./dist/PaperPlane.svelte"
@@ -984,6 +1038,10 @@
     "./Pencil2.svelte": {
       "types": "./dist/Pencil2.svelte.d.ts",
       "svelte": "./dist/Pencil2.svelte"
+    },
+    "./People.svelte": {
+      "types": "./dist/People.svelte.d.ts",
+      "svelte": "./dist/People.svelte"
     },
     "./Person.svelte": {
       "types": "./dist/Person.svelte.d.ts",
@@ -1088,6 +1146,10 @@
     "./Section.svelte": {
       "types": "./dist/Section.svelte.d.ts",
       "svelte": "./dist/Section.svelte"
+    },
+    "./Server.svelte": {
+      "types": "./dist/Server.svelte.d.ts",
+      "svelte": "./dist/Server.svelte"
     },
     "./SewingPin.svelte": {
       "types": "./dist/SewingPin.svelte.d.ts",
