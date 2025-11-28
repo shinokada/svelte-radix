@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { HighlightCompo, Code, H2 } from 'runes-webkit';
+  import { Code, H2 } from 'runes-webkit';
+  import { HighlightCompo } from 'svelte-rune-highlight';
 
   const modules = import.meta.glob('./md/*.md', {
     query: '?raw',
@@ -23,7 +24,7 @@
   icon preferences as follows:
 </p>
 
-<HighlightCompo codeLang="ts" code={modules['./md/setting-preferences.md'] as string} />
+<HighlightCompo lang="ts" code={modules['./md/setting-preferences.md'] as string} />
 
 <p>
   All properties are optional, allowing you to fine-tune the appearance and accessibility of your
@@ -34,7 +35,7 @@
 
 <p>If you set <Code>size</Code>, icons can be customized with different color. For example:</p>
 
-<HighlightCompo codeLang="ts" code={modules['./md/prop-size.md'] as string} />
+<HighlightCompo lang="ts" code={modules['./md/prop-size.md'] as string} />
 
 <H2>Setting more than one props</H2>
 
