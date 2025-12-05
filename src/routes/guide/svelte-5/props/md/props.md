@@ -3,6 +3,6 @@
 - color = ctx.color || 'currentColor'
 - title
 - desc
-- focusable = 'false',
+- focusable = ctx.focusable || 'false',
 - ariaLabel,
 - ...restProps

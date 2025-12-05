@@ -1,5 +1,11 @@
 # svelte-radix
 
+## 3.0.2
+
+### Patch Changes
+
+- fix: type and focusable update
+
 ## 3.0.1
 
 ### Patch Changes

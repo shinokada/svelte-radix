@@ -10,7 +10,7 @@
     color = ctx.color || 'currentColor',
     title,
     desc,
-    focusable = 'false',
+    focusable = ctx.focusable || 'false',
     ariaLabel,
     ...restProps
   }: Props = $props();
@@ -53,7 +53,7 @@
 @prop color = ctx.color || 'currentColor'
 @prop title
 @prop desc
-@prop focusable = 'false'
+@prop focusable = ctx.focusable || 'false'
 @prop ariaLabel
 @prop ...restProps
 -->
