@@ -38,7 +38,7 @@
   };
   const downloads: NpmDownloadPropsType = {
     packageName: 'svelte-radix',
-    link: ['https://www.npmjs.com/package/svelte-radix']
+    link: ['https://www.npmjs.com/package/svelte-radix', 'https://svelte-radix.codewithshin.com/']
   };
 
   const modules = import.meta.glob('./md/*.md', {

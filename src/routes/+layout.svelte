@@ -29,7 +29,7 @@
     SidebarDropdownWrapper,
     SidebarItem
   } from 'flowbite-svelte';
-  import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
+  import { MetaTags, deepMerge } from 'runes-meta-tags';
   import { Runatics } from 'runatics';
   import DynamicCodeBlockStyle from './utils/DynamicCodeBlockStyle.svelte';
 
@@ -50,7 +50,7 @@
   );
   // sidebar
   const sidebarUi = uiHelpers();
-  let isOpen = $state(false);
+  let isOpen = $derived(sidebarUi.isOpen);
   const closeSidebar = sidebarUi.close;
 
   // Check if the current URL matches any child href in a dropdown item
@@ -88,20 +88,12 @@
   }
   let urlsToIncludeSwitcher = ['/guide', '/guide2', '/how-to-use', '/quick-start'];
   let include = $derived(isIncluded(activeUrl, urlsToIncludeSwitcher));
-
-  $effect(() => {
-    metaTags = page.data.pageMetaTags
-      ? deepMerge(page.data.layoutMetaTags, page.data.pageMetaTags)
-      : data.layoutMetaTags;
-    isOpen = sidebarUi.isOpen;
-  });
-
   let activeClass = 'p-2 text-sm lg:text-base';
   let nonActiveClass = 'p-2 text-sm lg:text-base';
 </script>
 
 <Runatics {analyticsId} />
-<RunesMetaTags {...metaTags} />
+<MetaTags {...metaTags} />
 
 <Navbar
   breakpoint="lg"
